@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/core/default.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/core/contenido.css" />
+
+        <title>PAPI Authentication Server</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
+    </head>
+
+    <body>
+
+
+        <div id="contenedor_general">
+            <div id="cabecera">
+                <div id="logo"></div>
+            </div>
+            <div id="wrapper">
+
+                <div id="sf_admin_container">
+                    <h1>PAPI Authentication Service</h1>
+
+
+                    <div class="texto_intro">
+                        This is the example lofin form of the symfony PAPI plugin. If needed, you
+                        can change it. In the documentation you can find how to do it.
+                    </div>
+
+                    <h1>session init</h1>
+
+                    <div class="caja_login">
+                        <div class="sf_admin_form">
+                            <?php if ($app['session']->hasFlash('message')): ?>
+                                <div class="error"><?php echo $app['session']->getFlash('message') ?></div>
+                            <?php endif; ?>
+
+                            <?php if (isset($app['validator.errors'])) : ?>
+                                    <div class="error">                 
+                                <?php foreach ($app['validator.errors'] as $error) : ?>
+
+                                <?php echo $error->getPropertyPath() . ' : ' . $error->getMessage() ?>
+                                        <br/>
+                                <?php endforeach; ?>
+                                        </div>  
+                                <?php endif; ?>
+                                          
+
+
+                                    <form name="f" action="signin" method="post" >
+                                        <!-- Parámetros PAPI -->
+                                <?php if (isset($app['session.request'])): ?>
+                                <?php foreach ($app['session.request'] as $k => $v): ?>
+                                                <input type="hidden" name="<?php echo $k ?>" value="<?php echo $v ?>" />
+                                <?php endforeach; ?>
+                                <?php endif; ?>
+                                <!-- Fin Parámetros PAPI -->
+
+                                <fieldset>
+                                    <div class="sf_admin_form_row">
+                                        <div>
+                                            <label for="username"><label for="signin_username">Username</label></label>
+                                            <div class="content"><input type="text" name="signin[username]" id="signin_username" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sf_admin_form_row">
+
+                                        <div>
+                                            <label for="password"><label for="signin_password">Password</label></label>
+                                            <div class="content"><input type="password" name="signin[password]" id="signin_password" /></div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+
+                                <ul class="sf_admin_actions">
+
+                                    <li>
+                                        <input type="submit" value="Continue" />
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            ﻿<div class="PiePagina">
+                <ul>
+                    <li><a href="#" title="Aviso legal" target="">Aviso legal</a>|</li>
+                    <li><a href="http://www.w3.org/WAI/" title="Accesibilidad" target="">Accesibilidad</a>|</li>
+
+                    <li>
+                        <a href="http://www.w3.org/WAI/" title="Logo de la WAI" target="">
+                            <img alt="Accesibilidad web" src="/symfonite/web/images/logowai.gif" />            </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

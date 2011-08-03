@@ -1,0 +1,439 @@
+    html{
+    color:#000;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+}
+table{
+    border-collapse:collapse;border-spacing:0;
+}
+fieldset,img{
+    border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var
+{
+    font-style:normal;font-weight:normal;
+}
+li{
+    list-style:none;
+}
+caption,th
+{
+    text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;font-weight:normal;
+}
+q:before,q:after{
+    content:'';
+}
+abbr,acronym{
+    border:0;font-variant:normal;
+}
+sup{
+    vertical-align:text-top;
+}
+sub{
+    vertical-align:text-bottom;
+}
+input,textarea,select{
+    font-family:inherit;font-size:inherit;font-weight:inherit;
+}
+input,textarea,select{
+    font-size:100%;
+}
+legend{
+    color:#000;
+}
+del,ins{
+    text-decoration:none;
+}
+
+
+body
+{
+    font:13px/1.231 arial,helvetica,clean,sans-serif;
+    font-size:small;
+    font:x-small;
+}
+
+select,input,button,textarea
+{
+    font:99% arial,helvetica,clean,sans-serif;
+}
+
+table
+{
+    font-size:inherit;
+    font:100%;
+}
+
+pre,code,kbd,samp,tt
+{
+    font-family:monospace;
+    font-size:108%;
+    line-height:100%;
+}
+
+h1{
+    font-size:138.5%;
+}
+
+h2
+{
+    font-size:123.1%;
+}
+
+h3
+{
+    font-size:108%;
+}
+
+h1,h2,h3
+{
+    margin:1em 0;
+}
+
+h1,h2,h3,h4,h5,h6,strong
+{
+    font-weight:bold;
+}
+
+abbr,acronym
+{
+    border-bottom:1px dotted #000;
+    cursor:help;
+}
+
+em
+{
+    font-style:italic;
+}
+
+blockquote,ul,ol,dl
+{
+    margin:1em;
+}
+
+ol,ul,dl
+{
+    margin-left:2em;
+}
+
+ol li
+{
+    list-style:decimal outside;
+}
+
+ul li
+{
+    list-style:disc outside;
+}
+
+dl dd
+{
+    margin-left:1em;
+}
+
+th,td
+{
+    border:1px solid #000;padding:.5em;
+}
+
+th
+{
+    font-weight:bold;
+    text-align:left;
+}
+
+caption
+{
+    margin-bottom:.5em;text-align:center;
+}
+
+p,fieldset,table,pre
+{
+    margin-bottom:1em;
+}
+
+input[type=text],input[type=password],textarea
+{
+    width:12.25em;
+    width:11.9em;
+}
+
+body
+{
+    padding: 30px;
+    text-align: left;
+}
+
+html, body, div, ul,ol , li,span, p, a, h2, h3, img, form, fieldset, legend{
+    margin:0px;
+    padding:0px;
+    text-decoration: none;
+}
+
+
+a{
+    color: #0063b6;color: #247380;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+h1{
+    font-size: 1.8em;
+    padding: 0px;
+    margin-top:6px;
+    margin-bottom:1em;
+    font-weight:normal;
+    color:#0063b6;
+}
+
+h2{
+    font-size: 1.4em;
+    margin-top:6px;
+    margin-bottom:1em;	font-weight:normal;
+}
+
+h3{
+    font-size: 1.2em;
+    margin-top:6px;
+    margin-bottom:1em;	font-weight:normal;
+    color:#336699;
+}
+
+h4{
+    font-size: 1em;
+    margin-top:6px;
+    margin-bottom:1em;	font-weight:normal;
+    color:#336699;
+}
+
+hr
+{height:1px;background-color:#ccc;border:0px solid #000;}
+
+
+body{
+    margin: 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    background-image: url(img_default/fon-home.jpg);
+    background-position:top center;
+    background-repeat:no-repeat;
+    background-color:#507D83;
+
+}
+
+
+#contenedor_general{
+    display: block;
+    margin: auto;
+    width: 970px;
+
+}
+
+
+#cabecera{
+    display: block;
+    margin: auto;
+    height: 55px;
+    background-repeat: repeat-x;
+    background:none;
+    margin-top: 0px;
+    margin-bottom:15px;
+
+}
+
+
+#wrapper{
+    display: block;
+    margin: auto;
+    width: auto;
+    min-height:350px;
+    background-color: #fff;
+    background-image:url(img_default/fondo_wrapper.jpg);
+    background-repeat:repeat-x;
+    padding:20px;
+    padding-bottom:60px;
+
+}
+
+
+#logo{
+    float:right;width:980px;
+    background-image: url(img_default/logo.png);
+    background-repeat: no-repeat;
+    background-position:0px 10px;
+    border:0px solid #000;
+    clear:both;
+    height:70px;}
+
+
+.MenuCabecera{
+    float: right;
+    display: block;
+    vertical-align: middle;
+    width:970px;
+    padding-top:10px;
+    padding-bottom:20px;
+
+
+}
+
+#contenido {
+    display: block;
+    padding-bottom: 10px;
+    padding:0px;
+    margin-top:0px;
+    margin:auto;
+    border-top: 0px solid #EF5026;
+    width:900px;border:0px;
+
+
+}
+
+
+.bloque
+{border-bottom:1px solid #0063b6;padding:0px;padding-bottom:6px;}
+
+
+.enunciado
+{border:0px solid #0063b6;padding:10px;width:800px;display:block;margin:auto;font-size:1.1em; background-color:#ebefef;}
+
+
+#archivo 
+{border:1px solid #666;}
+
+#perfil 
+{border:0px solid #0063b6;float:right;}
+
+.caja_login
+{width:300px;height:170px;border:0px solid #000;background-color:#ebefef;float:none;margin:150px auto;padding:15px;}
+
+.caja_login form
+{border:0px solid #000;background-color:#ebefef;margin:auto;}
+
+.caja_login form table th
+{border:0px solid #000;padding:2px;}
+
+.caja_login form table td
+{border:0px solid #000;padding:2px;}
+
+.caja_login form input
+{border:1px solid #666;margin:2px;padding:2px;}
+
+.caja_login form button
+{border:1px solid #666;margin:2px;background-color:#c0e2ff;}
+
+.PiePagina{	
+    float: left;
+    display: block;
+    width: 970px;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background:none;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    background-color:#FFFFFF;
+
+}
+
+.PiePagina li{
+    display: inline;
+    color: #4372A7;
+    vertical-align: middle;
+}
+
+.PiePagina hr{
+    width: 390px;
+    color: #CCC;
+    height: 1px;
+    text-decoration: none;
+}
+
+.PiePagina a{
+    margin-right: 4px;
+}
+
+.PiePagina #LogoWai{
+    padding-top: 12px;
+}
+
+.PiePagina #LogoRss{
+    padding-top: 8px;
+}
+
+
+.RutaNavegacion{
+    padding-left:30px;
+    color: #1F99C2;
+    float:left;
+
+}
+
+.RutaNavegacion a{
+
+}
+
+.error_alerta
+{width:800px;display:block;margin:40px auto;padding:10px;border:1px solid #000;background-image: url(img_default/fondo_mensaje.jpg);border-right:1px solid #85a6c0;border-bottom:1px solid #85a6c0;border-left:1px solid #fff;border-top:1px solid #fff;}
+
+.error_alerta h1
+{font-size:24px;font-weight:normal;margin-bottom:10px;}
+
+dl.error_info
+{width:800px;display:block;margin:40px auto;}
+
+dl.error_info dt, dl
+{margin:0px;padding:0px;}
+
+dl.error_info dt
+{font-size:14px;font-weight:normal;margin-bottom:5px;margin-top:5px;color:#045294;}
+
+.texto_intro
+{width:420px;float:left;height:200px;border:0px solid #000;font-size:1.2em;padding:20px;padding-left:60px;margin-top:30px;}
+
+.texto_intro p
+{margin-bottom:1em;}
+
+.caja_login
+{
+    width:320px;    
+    border:0px solid #000;
+    float:none;padding:15px;
+    font-size:1.1em;
+    float:left;
+    margin-top:10px;
+}
+
+.caja_login form
+{border:0px solid #000;background-color:#ebefef;float:left;background-color:#ebefef;padding:20px;width:270px;}
+
+.caja_login form table th
+{border:0px solid #000;padding:2px;}
+
+.caja_login form table td
+{border:0px solid #000;padding:2px;}
+
+.caja_login input
+{border:1px solid #666;margin:2px;padding:2px;}
+
+.caja_login form button
+{border:1px solid #666;margin:2px;background-color:#c0e2ff;}
+
+.user_ico
+{
+	background: url(img_default/user.png) no-repeat 0 0;
+	padding-left: 18px;
+}
+
+.profile_ico
+{
+    background: url(img_default/profile.png) no-repeat 0 0;
+	padding-left: 20px;
+}
