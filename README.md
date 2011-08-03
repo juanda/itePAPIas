@@ -52,6 +52,7 @@ which identify this AS.
 
 * `$config['as']['message_no_auth']` : Message to show when the authentication
 process is not correct.
+
 ## Notes
 
 It's highly recommended to set the 'web' directory as the document root
