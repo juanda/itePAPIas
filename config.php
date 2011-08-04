@@ -2,7 +2,7 @@
 
 $config = array(
     'as' => array(
-        'connector' => 'Simple',
+        'connector' => 'SimpleWithForm',
         'id' => 'example-AS',
         'pkey_file' => dirname(__FILE__) . '/pkey.pem',
         'log_file' => '/tmp/as_log',
