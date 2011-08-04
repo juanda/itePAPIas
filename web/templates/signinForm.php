@@ -23,7 +23,7 @@
 
 
                     <div class="texto_intro">
-                        This is the example lofin form of the symfony PAPI plugin. If needed, you
+                        This is the example login form of the symfony PAPI plugin. If needed, you
                         can change it. In the documentation you can find how to do it.
                     </div>
 

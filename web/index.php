@@ -16,8 +16,14 @@ $app = new Silex\Application();
 // Register Extensions
 //
 $app->register(new Silex\Extension\SessionExtension());
-$app->register(new Silex\Extension\ValidatorExtension());
+$app->register(new Silex\Extension\ValidatorExtension(), array(
+    'validator.class_path'    => __DIR__.'/../src',
+));
 
+$app['autoloader']->registerNamespaces(array(
+    'TeyDe' => __DIR__.'/../src',
+));
+$app['autoloader']->register();
 //
 // Looking for the connector to use
 //
@@ -76,7 +82,7 @@ $app->post('/signin', function () use ($config, $app)
 //            print_r($app['session']);
 //            echo '</pre>';
             $signinData = $app['request']->get('signin');
-            $signinParameters = new Core\SigninParameters();
+            $signinParameters = new Connectors\SigninParameters();
             $signinParameters->bind($signinData);
 
             $app['validator.errors'] = $app['validator']->validate($signinParameters);
