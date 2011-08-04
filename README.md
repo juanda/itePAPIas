@@ -5,10 +5,15 @@ This software provides an easy-to-deploy PAPI authentication server.
 
 ## Installation
 
-* Get the code. You can directly download from this github repository or 
-if you prefer a versioned copy, you can use a git client:
+* Get the code. The easier and quicker way to do that is by downloading from:
+<http://ntic.educacion.es/desarrollo/itePAPIas/itePAPIas.Beta-1.tgz>.
+
+But if you can prefer a versioned copy, you can use a git client:
 
 	git clone git@github.com:juandalibaba/itePAPIas.git
+        git submodule init
+        git submodule upload
+
 
 * Configure the AS by editing the config.php  file. 
 
@@ -53,7 +58,19 @@ which identify this AS.
 * `$config['as']['message_no_auth']` : Message to show when the authentication
 process is not correct.
 
-## Notes
+### Notes
 
 It's highly recommended to set the 'web' directory as the document root
 of your web server.
+
+## Connectors
+
+### Available connectors
+
+### How to add and implement new Connectors
+
+## Filters
+
+### Available filters
+
+### How to add and implement new Filters
