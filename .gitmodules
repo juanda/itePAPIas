@@ -1,15 +1,6 @@
-[submodule "str/TeyDe"]
-	path = str/TeyDe
-	url = https://juandalibaba@github.com/juandalibaba/TeyDe.git
-[submodule "src/Symfony/Component"]
-	path = src/Symfony/Component
-	url = https://github.com/symfony/Validator.git
 [submodule "src/Symfony/Component/Validator"]
 	path = src/Symfony/Component/Validator
 	url = https://github.com/symfony/Validator.git
-[submodule "scr/TeyDe"]
-	path = scr/TeyDe
-	url = https://juandalibaba@github.com/juandalibaba/TeyDe.git
 [submodule "src/TeyDe"]
 	path = src/TeyDe
 	url = https://juandalibaba@github.com/juandalibaba/TeyDe.git
