@@ -26,7 +26,7 @@ $app['autoloader']->register();
 //
 // Looking for the connector to use
 //
-$app['connector.name'] = $config['as']['connector'];
+$app['connector.name'] = $config['connector']['name'];
 if (!$app['connector.name'])
 {
     throw new Exception('No connector has been defined. You must set the
@@ -77,7 +77,7 @@ $app->post('/signin', function () use ($config, $app)
 //            print_r($app['session']);
 //            echo '</pre>';
             $signinData = $app['request']->get('signin');
-            
+
             $signinParameters = Connectors\Core\SigninParametersFactory::createInstance($app['connector.name']);
             $signinParameters->bind($signinData);
 
@@ -85,7 +85,8 @@ $app->post('/signin', function () use ($config, $app)
 
             if (count($app['validator.errors']) == 0) // The form is valid
             {
-                $connector = Connectors\Core\ConnectorFactory::createInstance($signinData, $app['connector.name']);
+                $connector = Connectors\Core\ConnectorFactory::createInstance($signinData,
+                        $app['connector.name'], $config['connector']['config']);
                 $auth = $connector->isAuthenticated();
                 if ($auth)
                 {
@@ -93,7 +94,7 @@ $app->post('/signin', function () use ($config, $app)
                 } else
                 {
                     $app['session']->setFlash('message',
-                            $config['as']['message_no_auth']);
+                            $config['message_no_auth']);
 
 
                     return $app->redirect('signin');
