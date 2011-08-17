@@ -1,0 +1,2 @@
+This directory is intended to put the log files and the request database.
+Be careful with the permission, the web server must write on it.
