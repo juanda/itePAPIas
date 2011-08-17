@@ -153,4 +153,11 @@ insight into the connector development.
 
 ### How to add and implement new Filters
 
+### TO-DO
+
+* Improve the configuration system
+* Improve de logger system
+* the getLDAPException method of TeyDe\Papi\Connectors\LDAP\LDAP class is not
+implemented (neither in the original simpleSAMLphp class)
+
 [1] This connector is included as example with the software

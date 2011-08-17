@@ -102,3 +102,16 @@
 [Wed Aug 17 10:27:04 2011] [#13141873] [info] [client 127.0.0.1] [test] [PoA.php:196] Autenticando mediante el motor "PAPIAuthnEngine".
 [Wed Aug 17 10:27:04 2011] [#13141873] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_test" no encontrada.
 [Wed Aug 17 10:27:04 2011] [#13141873] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost/itePAPIas/web/index.php/signin?ATTREQ=poaid&PAPIPOAREF=913563947&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2FitePAPIas%2Fweb%2Findex.php%2Ftest%3FAS%3Dexample-AS".
+[Wed Aug 17 11:54:04 2011] [#13141873] [info] [client 127.0.0.1] [test] [PoA.php:196] Autenticando mediante el motor "PAPIAuthnEngine".
+[Wed Aug 17 11:54:04 2011] [#13141873] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_test" no encontrada.
+[Wed Aug 17 11:54:04 2011] [#13141873] [info] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:677] Se han eliminado 1 peticiones obsoletas de la base de datos.
+[Wed Aug 17 11:54:04 2011] [#13141873] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost/itePAPIas/web/index.php/signin?ATTREQ=poaid&PAPIPOAREF=1537180351&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2FitePAPIas%2Fweb%2Findex.php%2Ftest".
+[Wed Aug 17 11:54:12 2011] [#727323249] [info] [client 127.0.0.1] [test] [PoA.php:196] Autenticando mediante el motor "PAPIAuthnEngine".
+[Wed Aug 17 11:54:12 2011] [#727323249] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_test" no encontrada.
+[Wed Aug 17 11:54:12 2011] [#727323249] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost/itePAPIas/web/index.php/signin?ATTREQ=poaid&PAPIPOAREF=1116593814&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2FitePAPIas%2Fweb%2Findex.php%2Ftest".
+[Wed Aug 17 11:54:23 2011] [#727323249] [info] [client 127.0.0.1] [test] [PoA.php:196] Autenticando mediante el motor "PAPIAuthnEngine".
+[Wed Aug 17 11:54:23 2011] [#727323249] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "objectClass=inetOrgPerson|organizationalPerson|person|top,uid=manolito,description=Personas de la organización.,cn=MANOLO,preferredLanguage=es-ES,userPassword={MD5}cQ4PyOjiTEicWa8/l005iQ==,sn=CHICHIBOLO,mail=manolito_chichibolo@gmail.com,Array".
+[Wed Aug 17 11:54:23 2011] [#727323249] [warning] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/itePAPIas/web/index.php/test?AS=example-AS".
+[Wed Aug 17 11:54:23 2011] [#727323249] [info] [client 127.0.0.1] [test] [PoA.php:196] Autenticando mediante el motor "PAPIAuthnEngine".
+[Wed Aug 17 11:54:23 2011] [#727323249] [info] [client 127.0.0.1] [test] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Wed Aug 17 11:54:23 2011] [#727323249] [warning] [client 127.0.0.1] [test] [PoA.php:205] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".

@@ -18,11 +18,17 @@
  * ->getNames('PAPIREQUEST')
  */
 
-namespace TeyDe\Papi\Connectors\Simple;
+namespace TeyDe\Papi\Connectors\LDAP;
+
+use TeyDe\Papi\Core\PAPIASLog;
 
 class Connector
 {
 
+    private $userAttributes = array();
+    private $isAuthenticated = false;
+    private $username;
+    private $password;
     /**
      * String with the location of this configuration.
      * Used for error reporting.
@@ -96,7 +102,10 @@ class Connector
      * @param string $location  The location of this configuration. Used for error reporting.
      */
     public function __construct($data, $config)
-    {               
+    {
+        $this->username = $data['username'];
+        $this->password = $data['password'];
+        
         /* Parse configuration. */        
         $this->hostname = $config['hostname'];
         $this->enableTLS = $config['enable_tls'];
@@ -113,21 +122,32 @@ class Connector
                 $this->searchPassword = $config['search.password'];
             }
 
-            $this->searchBase = $config->getArrayizeString('search.base');
-            $this->searchAttributes = $config->getArray('search.attributes');
+            $this->searchBase = array($config['search.base']);
+            $this->searchAttributes = $config['search.attributes'];
         } else
         {
-            $this->dnPattern = $config->getString('dnpattern');
+            $this->dnPattern = $config['dnpattern'];
         }
 
         /* Are privs needed to get to the attributes? */
         if ($this->privRead)
         {
-            $this->privUsername = $config->getString('priv.username');
-            $this->privPassword = $config->getString('priv.password');
+            $this->privUsername = $config['priv.username'];
+            $this->privPassword = $config['priv.password'];
         }
 
-        $this->attributes = $config->getArray('attributes', NULL);
+        $this->attributes = $config['attributes'];
+
+        $this->userAttributes = $this->login();
+
+        if($this->userAttributes)
+        {
+            $this->isAuthenticated = true;
+        }
+        else
+        {
+            $this->isAuthenticated = false;
+        }
     }
 
     /**
@@ -141,22 +161,13 @@ class Connector
      * @param arrray $sasl_args  Array of SASL options for LDAP bind.
      * @return array  Associative array with the users attributes.
      */
-    public function login($username, $password, array $sasl_args = NULL)
-    {
-        assert('is_string($username)');
-        assert('is_string($password)');
-
-        if (empty($password))
-        {
-            SimpleSAML_Logger::info($this->location . ': Login with empty password disallowed.');
-            throw new SimpleSAML_Error_Error('WRONGUSERPASS');
-        }
-
-        $ldap = new SimpleSAML_Auth_LDAP($this->hostname, $this->enableTLS, $this->debug, $this->timeout);
+    private function login(array $sasl_args = NULL)
+    {               
+        $ldap = new LDAP($this->hostname, $this->enableTLS, $this->debug, $this->timeout);
 
         if (!$this->searchEnable)
         {
-            $ldapusername = addcslashes($username, ',+"\\<>;*');
+            $ldapusername = addcslashes($this->username, ',+"\\<>;*');
             $dn = str_replace('%username%', $ldapusername, $this->dnPattern);
         } else
         {
@@ -164,23 +175,26 @@ class Connector
             {
                 if (!$ldap->bind($this->searchUsername, $this->searchPassword))
                 {
-                    throw new Exception('Error authenticating using search username & password.');
+                    return false;
+                    //throw new \Exception('Error authenticating using search username & password.');
                 }
             }
 
-            $dn = $ldap->searchfordn($this->searchBase, $this->searchAttributes, $username, TRUE);
+            $dn = $ldap->searchfordn($this->searchBase, $this->searchAttributes, $this->username, TRUE);
             if ($dn === NULL)
             {
                 /* User not found with search. */
-                SimpleSAML_Logger::info($this->location . ': Unable to find users DN. username=\'' . $username . '\'');
-                throw new SimpleSAML_Error_Error('WRONGUSERPASS');
+                PAPIASLog::doLog('Info: ' . $this->location . ': Unable to find users DN. username=\'' . $username . '\'');
+                return false;
+                //throw new SimpleSAML_Error_Error('WRONGUSERPASS');
             }
         }
 
-        if (!$ldap->bind($dn, $password, $sasl_args))
+        if (!$ldap->bind($dn, $this->password, $sasl_args))
         {
-            SimpleSAML_Logger::info($this->location . ': ' . $username . ' failed to authenticate. DN=' . $dn);
-            throw new SimpleSAML_Error_Error('WRONGUSERPASS');
+            PAPIASLog::doLog('Info: ' . $this->location . ': ' . $username . ' failed to authenticate. DN=' . $dn);
+            return false;
+            //throw new \Exception('WRONGUSERPASS');
         }
 
         /* In case of SASL bind, authenticated and authorized DN may differ */
@@ -193,7 +207,7 @@ class Connector
             /* Yes, rebind with privs */
             if (!$ldap->bind($this->privUsername, $this->privPassword))
             {
-                throw new Exception('Error authenticating using privileged DN & password.');
+                throw new \Exception('Error authenticating using privileged DN & password.');
             }
         }
 
@@ -224,7 +238,7 @@ class Connector
      */
     public function searchfordn($attribute, $value, $allowZeroHits)
     {
-        $ldap = new SimpleSAML_Auth_LDAP($this->hostname,
+        $ldap = new LDAP($this->hostname,
                         $this->enableTLS,
                         $this->debug,
                         $this->timeout);
@@ -236,32 +250,14 @@ class Connector
                 $value, $allowZeroHits);
     }
 
-    public function getAttributes($dn, $attributes = NULL)
-    {
-        if ($attributes == NULL)
-            $attributes = $this->attributes;
-
-        $ldap = new SimpleSAML_Auth_LDAP($this->hostname,
-                        $this->enableTLS,
-                        $this->debug,
-                        $this->timeout);
-
-        return $ldap->getAttributes($dn, $attributes);
+    public function getAttributes()
+    {        
+        return $this->userAttributes;
     }
 
     public function isAuthenticated()
     {
         return $this->isAuthenticated;
-    }
-
-    public function getAttributes()
-    {
-        if ($this->isAuthenticated)
-        {
-            return $this->users[$this->signinData['username']]['attributes'];
-        }
-        else
-            return null;
-    }
+    }    
 
 }
