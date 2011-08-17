@@ -1,0 +1,348 @@
+<html>
+<head>
+<title>File Source for ASN1.php</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">phpPoA2</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+        
+                                    
+                              		  [ <a href="../classtrees_phpPoA2.html" class="menu">class tree: phpPoA2</a> ]
+		  [ <a href="../elementindex_phpPoA2.html" class="menu">index: phpPoA2</a> ]
+		  	    [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+	<div id="ric">
+					<p><a href="../ric_GPL.html">GPL</a></p>
+					<p><a href="../ric_INSTALL.html">INSTALL</a></p>
+					<p><a href="../ric_LICENSE.html">LICENSE</a></p>
+					<p><a href="../ric_README.html">README</a></p>
+			</div>
+      <b>Packages:</b><br />
+              <a href="../li_phpPoA2.html">phpPoA2</a><br />
+            <br /><br />
+                  
+      
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1 align="center">Source for file ASN1.php</h1>
+<p>Documentation is available at <a href="../phpPoA2/crypto/_lib---crypto---ASN1.php.html">ASN1.php</a></p>
+<div class="src-code">
+<ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@copyright</span><span class="src-doc">&nbsp;Copyright&nbsp;2005-2010&nbsp;RedIRIS,&nbsp;http://www.rediris.es/</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;This&nbsp;file&nbsp;is&nbsp;part&nbsp;of&nbsp;phpPoA2.</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;phpPoA2&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation,&nbsp;either&nbsp;version&nbsp;3&nbsp;of&nbsp;the&nbsp;License,&nbsp;or</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;phpPoA2&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;along&nbsp;with&nbsp;phpPoA2.&nbsp;If&nbsp;not,&nbsp;see&nbsp;&lt;http://www.gnu.org/licenses/&gt;.</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;http://www.gnu.org/licenses/gpl.html&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;2.0</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;Jaime&nbsp;Perez&nbsp;&lt;jaime.perez@rediris.es&gt;</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@filesource</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-doc">&nbsp;*&nbsp;&nbsp;Mostly&nbsp;based&nbsp;on&nbsp;code&nbsp;by&nbsp;A.&nbsp;Oliinyk.</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-doc">&nbsp;*&nbsp;Basic&nbsp;tags.</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a31"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;TAG_BER&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-num">0x00</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;TAG_BOOLEAN&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-num">0x01</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;TAG_INTEGER&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-num">0x02</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a34"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;TAG_BITSTRING&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-num">0x03</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-doc">&nbsp;*&nbsp;Constructed&nbsp;tags.</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a40"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;TAG_SEQUENCE&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-num">0x30</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-doc">&nbsp;*&nbsp;This&nbsp;class&nbsp;implements&nbsp;ASN.1&nbsp;encoding.</span></div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-doc">&nbsp;*&nbsp;Please,&nbsp;be&nbsp;aware&nbsp;that&nbsp;this&nbsp;class&nbsp;is&nbsp;INCOMPLETE,&nbsp;as&nbsp;it</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-doc">&nbsp;*&nbsp;is&nbsp;intended&nbsp;for&nbsp;BER/DER&nbsp;encoding&nbsp;primarily.</span></div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;phpPoA2</span></div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@subpackage</span><span class="src-doc">&nbsp;crypto</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a50"></a><span class="src-key">class&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html">ASN1</a>&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#var$tag">$tag</a><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">$value</a><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a56"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Build&nbsp;a&nbsp;new&nbsp;ASN1&nbsp;from&nbsp;its&nbsp;tag&nbsp;and&nbsp;value.</span></div></li>
+<li><div class="src-line"><a name="a57"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#method__construct">__construct</a><span class="src-sym">(</span><span class="src-var">$tag&nbsp;</span>=&nbsp;<span class="src-num">0x00</span><span class="src-sym">,&nbsp;</span><span class="src-var">$value&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$tag">tag</a>&nbsp;=&nbsp;<span class="src-var">$tag</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;=&nbsp;<span class="src-var">$value</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a64"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Encode&nbsp;this&nbsp;object&nbsp;into&nbsp;ASN.1.</span></div></li>
+<li><div class="src-line"><a name="a65"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodencode">encode</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;set&nbsp;the&nbsp;tag</span></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$encoded&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$tag">tag</a><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Write&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;contents.</span></div></li>
+<li><div class="src-line"><a name="a72"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Refer&nbsp;to&nbsp;ITU-T&nbsp;X.609&nbsp;section&nbsp;8.1.3&nbsp;for&nbsp;details&nbsp;on&nbsp;how&nbsp;length&nbsp;must&nbsp;be&nbsp;encoded.</span></div></li>
+<li><div class="src-line"><a name="a73"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$len&nbsp;</span>&lt;&nbsp;<span class="src-num">127</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{&nbsp;</span><span class="src-comm">//&nbsp;store&nbsp;in&nbsp;one&nbsp;byte</span></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$encoded&nbsp;</span>.=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodwriteByte">writeByte</a><span class="src-sym">(</span><span class="src-var">$len</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{&nbsp;</span><span class="src-comm">//&nbsp;store&nbsp;the&nbsp;length&nbsp;in&nbsp;separate&nbsp;bytes</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodint2bin">int2bin</a><span class="src-sym">(</span><span class="src-var">$len</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;write&nbsp;long&nbsp;length</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;first&nbsp;bit&nbsp;must&nbsp;be&nbsp;1</span></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$encoded&nbsp;</span>.=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodwriteByte">writeByte</a><span class="src-sym">(</span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$len</span><span class="src-sym">)&nbsp;</span>+&nbsp;<span class="src-num">128</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;write&nbsp;the&nbsp;bytes&nbsp;with&nbsp;real&nbsp;length</span></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$encoded&nbsp;</span>.=&nbsp;<span class="src-var">$len</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;finally&nbsp;write&nbsp;the&nbsp;value</span></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$encoded&nbsp;</span>.=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$encoded</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a95"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Decode&nbsp;an&nbsp;object&nbsp;in&nbsp;ASN.1&nbsp;format.</span></div></li>
+<li><div class="src-line"><a name="a96"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methoddecode">decode</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$buffer</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;get&nbsp;ASN.1&nbsp;tag</span></div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$tag">tag</a>&nbsp;=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadByte">readByte</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;get&nbsp;the&nbsp;length&nbsp;of&nbsp;de&nbsp;data</span></div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$byte&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadByte">readByte</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a105"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Read&nbsp;the&nbsp;real&nbsp;length.</span></div></li>
+<li><div class="src-line"><a name="a106"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Refer&nbsp;to&nbsp;ITU-T&nbsp;X.609&nbsp;section&nbsp;8.1.3&nbsp;for&nbsp;details&nbsp;on&nbsp;how&nbsp;length&nbsp;must&nbsp;be&nbsp;encoded.</span></div></li>
+<li><div class="src-line"><a name="a107"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;short&nbsp;length,&nbsp;stored&nbsp;in&nbsp;one&nbsp;byte</span></div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$byte&nbsp;</span>&lt;&nbsp;<span class="src-num">128</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<span class="src-var">$byte</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$byte&nbsp;</span>===&nbsp;<span class="src-num">128</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;indefinite&nbsp;length,&nbsp;read&nbsp;until&nbsp;two&nbsp;zero&nbsp;bytes&nbsp;are&nbsp;found</span></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$byte&nbsp;</span>&lt;&nbsp;<span class="src-num">255</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;long&nbsp;length,&nbsp;from&nbsp;1&nbsp;up&nbsp;to&nbsp;127&nbsp;next&nbsp;bytes</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodbin2int">bin2int</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadBytes">readBytes</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$byte&nbsp;</span>-&nbsp;<span class="src-num">128</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;255&nbsp;found,&nbsp;reserved&nbsp;value</span></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id">Exception</span><span class="src-sym">(</span><span class="src-str">&quot;Long&nbsp;length&nbsp;of&nbsp;0x7f&nbsp;cannot&nbsp;be&nbsp;used.&nbsp;Reserved&nbsp;value.&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a122"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;read&nbsp;the&nbsp;value</span></div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$len</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadBytes">readBytes</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$len</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;read&nbsp;until&nbsp;two&nbsp;zero&nbsp;bytes&nbsp;are&nbsp;found</span></div></li>
+<li><div class="src-line"><a name="a127"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a128"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">while</span><span class="src-sym">(</span><span class="src-id">true</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a129"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;.=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadByte">readByte</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a130"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a131"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$len&nbsp;</span>&gt;&nbsp;<span class="src-num">1&nbsp;</span>&amp;&amp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a><span class="src-sym">{</span><span class="src-var">$len&nbsp;</span>-<span class="src-num">2</span><span class="src-sym">}&nbsp;</span>===&nbsp;<span class="src-num">0&nbsp;</span>&amp;&amp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a><span class="src-sym">{</span><span class="src-var">$len&nbsp;</span>-<span class="src-num">1</span><span class="src-sym">}&nbsp;</span>===&nbsp;<span class="src-num">0</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a132"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;end-of-contents&nbsp;octets&nbsp;found,&nbsp;trim&nbsp;them</span></div></li>
+<li><div class="src-line"><a name="a133"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;=&nbsp;<a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a><span class="src-sym">,&nbsp;</span><span class="src-num">0</span><span class="src-sym">,&nbsp;</span><span class="src-var">$len&nbsp;</span>-&nbsp;<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a134"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">break</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a135"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a137"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a138"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a139"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a141"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a142"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Get&nbsp;the&nbsp;tag&nbsp;of&nbsp;this&nbsp;ASN.1.</span></div></li>
+<li><div class="src-line"><a name="a143"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a144"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodgetTag">getTag</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a145"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$tag">tag</a></span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a146"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a147"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a148"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a149"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Get&nbsp;the&nbsp;binary&nbsp;value&nbsp;of&nbsp;this&nbsp;ASN.1.</span></div></li>
+<li><div class="src-line"><a name="a150"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodgetValue">getValue</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a152"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a></span><span class="src-sym">{</span><span class="src-num">0</span><span class="src-sym">}</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a153"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//&nbsp;if&nbsp;the&nbsp;first&nbsp;byte&nbsp;is&nbsp;null,&nbsp;remove&nbsp;it</span></div></li>
+<li><div class="src-line"><a name="a154"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a></span><span class="src-sym">,&nbsp;</span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a155"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a157"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a></span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a158"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a159"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a160"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a161"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Set&nbsp;the&nbsp;binary&nbsp;value&nbsp;of&nbsp;this&nbsp;ASN.1.</span></div></li>
+<li><div class="src-line"><a name="a162"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodsetValue">setValue</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">)&nbsp;</span>&gt;&nbsp;<span class="src-num">1</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$byte&nbsp;</span>=&nbsp;<a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">{</span><span class="src-num">0</span><span class="src-sym">}</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a167"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a168"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;It&nbsp;is&nbsp;mandatory&nbsp;in&nbsp;ASN.1&nbsp;to&nbsp;precede&nbsp;data&nbsp;by&nbsp;a&nbsp;null&nbsp;byte</span></div></li>
+<li><div class="src-line"><a name="a169"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;if&nbsp;the&nbsp;first&nbsp;bit&nbsp;of&nbsp;the&nbsp;data&nbsp;is&nbsp;set.</span></div></li>
+<li><div class="src-line"><a name="a170"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$byte&nbsp;</span><span class="src-sym">&amp;&nbsp;</span><span class="src-num">0x80</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a172"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$value&nbsp;</span>=&nbsp;<a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-num">0x00</span><span class="src-sym">)</span>.<span class="src-var">$value</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a174"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a175"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;</span>=&nbsp;<span class="src-var">$value</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a176"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a177"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a178"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a179"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Get&nbsp;the&nbsp;integer&nbsp;value&nbsp;of&nbsp;this&nbsp;ASN.1.</span></div></li>
+<li><div class="src-line"><a name="a180"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a181"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodgetInteger">getInteger</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a182"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodbin2int">bin2int</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodgetValue">getValue</a><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a183"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a184"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a185"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a186"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Set&nbsp;the&nbsp;value&nbsp;of&nbsp;this&nbsp;ASN.1&nbsp;from&nbsp;an&nbsp;integer.</span></div></li>
+<li><div class="src-line"><a name="a187"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a188"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodsetInteger">setInteger</a><span class="src-sym">(</span><span class="src-var">$int</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a189"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodsetValue">setValue</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodint2bin">int2bin</a><span class="src-sym">(</span><span class="src-var">$int</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a190"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a191"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a192"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a193"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Get&nbsp;the&nbsp;sequence&nbsp;of&nbsp;values&nbsp;stored&nbsp;in&nbsp;this&nbsp;ASN.1.</span></div></li>
+<li><div class="src-line"><a name="a194"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a195"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodgetValues">getValues</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a196"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a197"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$values&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a></span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a198"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a199"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">while&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$values</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a200"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$asn&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html">ASN1</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a201"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$asn</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methoddecode">decode</a><span class="src-sym">(</span><span class="src-var">$values</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a202"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result</span><span class="src-sym">[</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$asn</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a203"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a204"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a205"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$result</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a206"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a207"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a208"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a209"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Set&nbsp;the&nbsp;value&nbsp;of&nbsp;this&nbsp;ASN.1&nbsp;to&nbsp;be&nbsp;a&nbsp;sequence&nbsp;of&nbsp;values.</span></div></li>
+<li><div class="src-line"><a name="a210"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a211"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodsetValues">setValues</a><span class="src-sym">(</span><span class="src-var">$values</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a212"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a213"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a214"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$values&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$value</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a215"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>.=&nbsp;<span class="src-var">$value</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodencode">encode</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a216"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a217"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a218"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../phpPoA2/crypto/ASN1.html#var$value">value</a>&nbsp;</span>=&nbsp;<span class="src-var">$result</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a219"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a220"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a221"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">/*********************</span></div></li>
+<li><div class="src-line"><a name="a222"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;PROTECTED&nbsp;METHODS&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a223"></a><span class="src-comm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*********************/</span></div></li>
+<li><div class="src-line"><a name="a224"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a225"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a226"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Read&nbsp;n&nbsp;bytes&nbsp;from&nbsp;a&nbsp;buffer&nbsp;and&nbsp;mov&nbsp;the&nbsp;internal&nbsp;pointer.</span></div></li>
+<li><div class="src-line"><a name="a227"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a228"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">protected&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadBytes">readBytes</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$length</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a229"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-num">0</span><span class="src-sym">,&nbsp;</span><span class="src-var">$length</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a230"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$buffer&nbsp;</span>=&nbsp;<a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$length</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a231"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$result</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a232"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a233"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a234"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a235"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Read&nbsp;first&nbsp;byte&nbsp;from&nbsp;the&nbsp;buffer&nbsp;and&nbsp;move&nbsp;the&nbsp;internal&nbsp;pointer.</span></div></li>
+<li><div class="src-line"><a name="a236"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a237"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">protected&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadByte">readByte</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$buffer</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a238"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadBytes">readBytes</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-num">1</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a239"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a240"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a241"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a242"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Write&nbsp;bytes&nbsp;to&nbsp;a&nbsp;buffer.</span></div></li>
+<li><div class="src-line"><a name="a243"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a244"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">protected&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodwriteBytes">writeBytes</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$bytes</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a245"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">for&nbsp;</span><span class="src-sym">(</span><span class="src-var">$i&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i&nbsp;</span>&lt;&nbsp;<a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$bytes</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>++<span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a246"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodwriteByte">writeByte</a><span class="src-sym">(</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$bytes</span><span class="src-sym">{</span><span class="src-var">$i</span><span class="src-sym">}</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a247"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a248"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a249"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a250"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a251"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Write&nbsp;a&nbsp;byte&nbsp;to&nbsp;a&nbsp;buffer.</span></div></li>
+<li><div class="src-line"><a name="a252"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a253"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">protected&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodwriteByte">writeByte</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$buffer</span><span class="src-sym">,&nbsp;</span><span class="src-var">$byte</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a254"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$buffer&nbsp;</span>.=&nbsp;<a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-var">$byte</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a255"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a256"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a257"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a258"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Decode&nbsp;an&nbsp;integer&nbsp;from&nbsp;its&nbsp;binary&nbsp;representation.</span></div></li>
+<li><div class="src-line"><a name="a259"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a260"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">protected&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodbin2int">bin2int</a><span class="src-sym">(</span><span class="src-var">$bin</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a261"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a262"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$len&nbsp;</span>=&nbsp;<a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$bin</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a263"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a264"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">for&nbsp;</span><span class="src-sym">(</span><span class="src-var">$i&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i&nbsp;</span>&lt;&nbsp;<span class="src-var">$len</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>++<span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a265"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$byte&nbsp;</span>=&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../phpPoA2/crypto/ASN1.html#methodreadByte">readByte</a><span class="src-sym">(</span><span class="src-var">$bin</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a266"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>+=&nbsp;<span class="src-var">$byte&nbsp;</span>&lt;&lt;&nbsp;<span class="src-sym">((</span><span class="src-var">$len&nbsp;</span>-&nbsp;<span class="src-var">$i&nbsp;</span>-&nbsp;<span class="src-num">1</span><span class="src-sym">)&nbsp;</span>*&nbsp;<span class="src-num">8</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a267"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a268"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a269"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$result</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a270"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a271"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a272"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a273"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Encode&nbsp;an&nbsp;integer&nbsp;in&nbsp;binary&nbsp;representation.</span></div></li>
+<li><div class="src-line"><a name="a274"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a275"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">protected&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../phpPoA2/crypto/ASN1.html#methodint2bin">int2bin</a><span class="src-sym">(</span><span class="src-var">$int</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a276"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a277"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a278"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a279"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$byte&nbsp;</span>=&nbsp;<span class="src-var">$int&nbsp;</span>%&nbsp;<span class="src-num">256</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a280"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$result&nbsp;</span>=&nbsp;<a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-var">$byte</span><span class="src-sym">)</span>.<span class="src-var">$result</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a281"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a282"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$int&nbsp;</span>=&nbsp;<span class="src-sym">(</span><span class="src-var">$int&nbsp;</span>-&nbsp;<span class="src-var">$byte</span><span class="src-sym">)&nbsp;</span>/&nbsp;<span class="src-num">256</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a283"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">while&nbsp;</span><span class="src-sym">(</span><span class="src-var">$int&nbsp;</span>&gt;&nbsp;<span class="src-num">0</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a284"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a285"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$result</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a286"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a287"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a288"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a289"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a290"></a><span class="src-php">?&gt;</span></div></li>
+</ol>
+</div>
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Fri, 11 Feb 2011 10:57:54 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

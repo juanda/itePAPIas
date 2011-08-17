@@ -1,0 +1,109 @@
+[Thu Jun 30 14:12:00 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:12:00 2011] [#1456319514] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:12:00 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:677] Se han eliminado 2 peticiones obsoletas de la base de datos.
+[Thu Jun 30 14:12:00 2011] [#1456319514] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://teyde.pntic.mec.es/rediris/ite-ecgpoa.php?ATTREQ=poaid&PAPIPOAREF=919280268&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F".
+[Thu Jun 30 14:12:03 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:12:03 2011] [#1456319514] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "mail=juanda@ite.educacion.es,ePTI=9e4de9bdeef5278889f443199690608b,sPUC=urn:mace:terena.org:schac:personalUniqueCode:es:rediris:sir:mbid:{sha1}bb3996bd233bee9cb03831c23d79c97384b7190b,ePA=staff,sHO=ite.educacion.es,ePE=urn:mace:rediris.es:entitlement:scs:admin,uid=juanda".
+[Thu Jun 30 14:12:03 2011] [#1456319514] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/?AS=ITEsirAS".
+[Thu Jun 30 14:12:03 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:12:03 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:12:03 2011] [#1456319514] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:20:14 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:20:14 2011] [#1456319514] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:20:14 2011] [#1456319514] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:20:24 2011] [#392898607] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:20:24 2011] [#392898607] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:20:24 2011] [#392898607] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:677] Se han eliminado 2 peticiones obsoletas de la base de datos.
+[Thu Jun 30 14:20:24 2011] [#392898607] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa?ACTION=CHECK&DATA=718547412&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:20:38 2011] [#392898607] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:20:38 2011] [#392898607] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "".
+[Thu Jun 30 14:20:38 2011] [#392898607] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/".
+[Thu Jun 30 14:20:38 2011] [#392898607] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:20:38 2011] [#392898607] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:20:38 2011] [#392898607] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:21:13 2011] [#692881273] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:21:13 2011] [#692881273] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:21:13 2011] [#692881273] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=730971508&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:21:44 2011] [#1968560720] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:21:44 2011] [#1968560720] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:21:44 2011] [#1968560720] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=1301086753&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:22:08 2011] [#1968560720] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:22:08 2011] [#1968560720] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "".
+[Thu Jun 30 14:22:08 2011] [#1968560720] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/".
+[Thu Jun 30 14:22:08 2011] [#1968560720] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:22:08 2011] [#1968560720] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:22:08 2011] [#1968560720] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:22:14 2011] [#247019769] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:22:14 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:22:14 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=1944422089&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:23:29 2011] [#247019769] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:23:29 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:23:29 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=1105513351&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:23:47 2011] [#247019769] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:23:47 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "".
+[Thu Jun 30 14:23:47 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/".
+[Thu Jun 30 14:23:47 2011] [#247019769] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:23:47 2011] [#247019769] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:23:47 2011] [#247019769] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:24:13 2011] [#2024741822] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:24:13 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:24:13 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=1840981551&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:29:46 2011] [#2024741822] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:29:46 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:29:46 2011] [#2024741822] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:677] Se han eliminado 3 peticiones obsoletas de la base de datos.
+[Thu Jun 30 14:29:46 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=630055342&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:30:07 2011] [#2024741822] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:30:07 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "".
+[Thu Jun 30 14:30:08 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/".
+[Thu Jun 30 14:30:08 2011] [#2024741822] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:30:08 2011] [#2024741822] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:30:08 2011] [#2024741822] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:30:55 2011] [#677899299] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:30:55 2011] [#677899299] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:30:55 2011] [#677899299] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://teyde.pntic.mec.es/rediris/ite-ecgpoa.php?ATTREQ=poaid&PAPIPOAREF=1748415661&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F".
+[Thu Jun 30 14:31:02 2011] [#677899299] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:31:02 2011] [#677899299] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:490] Respuesta vacía del AS/GPoA.
+[Thu Jun 30 14:31:02 2011] [#677899299] [warning] [client 127.0.0.1] [symfonite] [PoA.php:206] Error en la autenticación.
+[Thu Jun 30 14:31:45 2011] [#1753016017] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:31:45 2011] [#1753016017] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "mail=juanda@ite.educacion.es,ePTI=9e4de9bdeef5278889f443199690608b,sPUC=urn:mace:terena.org:schac:personalUniqueCode:es:rediris:sir:mbid:{sha1}bb3996bd233bee9cb03831c23d79c97384b7190b,ePA=staff,sHO=ite.educacion.es,ePE=urn:mace:rediris.es:entitlement:scs:admin,uid=juanda".
+[Thu Jun 30 14:31:46 2011] [#1753016017] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/?AS=ITEsirAS".
+[Thu Jun 30 14:31:46 2011] [#1753016017] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:31:46 2011] [#1753016017] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:31:46 2011] [#1753016017] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:33:27 2011] [#375929034] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:33:27 2011] [#375929034] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:33:27 2011] [#375929034] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=38326155&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:33:38 2011] [#375929034] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:33:38 2011] [#375929034] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:490] Respuesta vacía del AS/GPoA.
+[Thu Jun 30 14:33:38 2011] [#375929034] [warning] [client 127.0.0.1] [symfonite] [PoA.php:206] Error en la autenticación.
+[Thu Jun 30 14:35:50 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:35:50 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:35:50 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://sir.rediris.es/sirtestgpoa/index.php?ACTION=CHECK&DATA=1712045094&URL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F&POA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin&PAPIOPOA=http%3A%2F%2Flocalhost%2Fsymfonite%2Fplugins%2FedaPAPIPlugin".
+[Thu Jun 30 14:36:07 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:36:07 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "".
+[Thu Jun 30 14:36:07 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/".
+[Thu Jun 30 14:36:07 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:36:07 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:36:07 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:44:47 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:44:47 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:44:47 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:51:40 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:51:40 2011] [#1350421560] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:51:40 2011] [#1350421560] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:51:48 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:51:48 2011] [#349563036] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Thu Jun 30 14:51:48 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:677] Se han eliminado 1 peticiones obsoletas de la base de datos.
+[Thu Jun 30 14:51:48 2011] [#349563036] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://teyde.pntic.mec.es/rediris/ite-ecgpoa.php?ATTREQ=poaid&PAPIPOAREF=1243647462&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F".
+[Thu Jun 30 14:51:53 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:51:53 2011] [#349563036] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:527] La respuesta del AS/GPoA autentica la aserción "mail=juanda@ite.educacion.es,ePTI=9e4de9bdeef5278889f443199690608b,sPUC=urn:mace:terena.org:schac:personalUniqueCode:es:rediris:sir:mbid:{sha1}bb3996bd233bee9cb03831c23d79c97384b7190b,ePA=staff,sHO=ite.educacion.es,ePE=urn:mace:rediris.es:entitlement:scs:admin,uid=juanda".
+[Thu Jun 30 14:51:53 2011] [#349563036] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://localhost:80/symfonite/plugins/edaPAPIPlugin/?AS=ITEsirAS".
+[Thu Jun 30 14:51:53 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 14:51:53 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 14:51:53 2011] [#349563036] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 15:11:14 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Thu Jun 30 15:11:14 2011] [#349563036] [info] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:448] La cookie es valida.
+[Thu Jun 30 15:11:14 2011] [#349563036] [warning] [client 127.0.0.1] [symfonite] [PoA.php:204] Autenticación satisfactoria mediante el motor "PAPIAuthnEngine".
+[Fri Jul 01 08:30:17 2011] [#924740701] [info] [client 127.0.0.1] [symfonite] [PoA.php:195] Autenticando mediante el motor "PAPIAuthnEngine".
+[Fri Jul 01 08:30:17 2011] [#924740701] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:257] Cookie "PAPILcook_symfonite" no encontrada.
+[Fri Jul 01 08:30:17 2011] [#924740701] [warning] [client 127.0.0.1] [symfonite] [PAPIAuthnEngine.php:549] Redirigiendo al usuario a "http://teyde.pntic.mec.es/rediris/ite-ecgpoa.php?ATTREQ=poaid&PAPIPOAREF=557159269&PAPIPOAURL=http%3A%2F%2Flocalhost%3A80%2Fsymfonite%2Fplugins%2FedaPAPIPlugin%2F".

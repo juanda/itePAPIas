@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>File Source for papi1.5-query-authz.php</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">phpPoA2</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+        
+                                    
+                              		  [ <a href="../classtrees_phpPoA2.html" class="menu">class tree: phpPoA2</a> ]
+		  [ <a href="../elementindex_phpPoA2.html" class="menu">index: phpPoA2</a> ]
+		  	    [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+	<div id="ric">
+					<p><a href="../ric_GPL.html">GPL</a></p>
+					<p><a href="../ric_INSTALL.html">INSTALL</a></p>
+					<p><a href="../ric_LICENSE.html">LICENSE</a></p>
+					<p><a href="../ric_README.html">README</a></p>
+			</div>
+      <b>Packages:</b><br />
+              <a href="../li_phpPoA2.html">phpPoA2</a><br />
+            <br /><br />
+                  
+      
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1 align="center">Source for file papi1.5-query-authz.php</h1>
+<p>Documentation is available at <a href="../phpPoA2/QueryFilterAuthorizationEngine/_samples---papi1.5-query-authz.php.html">papi1.5-query-authz.php</a></p>
+<div class="src-code">
+<ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;This&nbsp;is&nbsp;a&nbsp;sample&nbsp;file&nbsp;to&nbsp;demonstrate&nbsp;the&nbsp;functionality&nbsp;of&nbsp;the&nbsp;phpPoA2&nbsp;package.</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;Jaime&nbsp;Perez&nbsp;&lt;jaime.perez@rediris.es&gt;</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@filesource</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;phpPoA2</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@subpackage</span><span class="src-doc">&nbsp;QueryFilterAuthorizationEngine</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a9"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">&quot;../PoA.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-var">$poa&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../phpPoA2/PoA.html">PoA</a></span><span class="src-sym">(</span><span class="src-str">&quot;samples&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-var">$apatterns&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-var">$dpatterns&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-key">function&nbsp;</span><a href="../phpPoA2/QueryFilterAuthorizationEngine/_samples---papi1.5-query-authz.php.html#functionqueryHook">queryHook</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$uri</span><span class="src-sym">,&nbsp;</span><span class="src-sym">&amp;</span><span class="src-var">$params</span><span class="src-sym">,&nbsp;</span><span class="src-sym">&amp;</span><span class="src-var">$allowed</span><span class="src-sym">,&nbsp;</span><span class="src-sym">&amp;</span><span class="src-var">$denied</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">global&nbsp;</span><span class="src-var">$apatterns</span><span class="src-sym">,&nbsp;</span><span class="src-var">$dpatterns</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$apatterns&nbsp;</span>=&nbsp;<span class="src-var">$allowed</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$dpatterns&nbsp;</span>=&nbsp;<span class="src-var">$denied</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-var">$hook&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../phpPoA2/Hook.html">Hook</a></span><span class="src-sym">(</span><span class="src-str">&quot;queryHook&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-var">$poa</span><span class="src-sym">-&gt;</span><span class="src-id">addHook</span><span class="src-sym">(</span><span class="src-str">&quot;QUERY_BEFORE_FILTERS&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-var">$hook</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-var">$auth&nbsp;</span>=&nbsp;<span class="src-var">$poa</span><span class="src-sym">-&gt;</span><span class="src-id">isAuthorized</span><span class="src-sym">(</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;QueryFilterAuthzEngine&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a28"></a>echo&nbsp;<span class="src-str">&quot;&lt;h1&gt;PAPI&nbsp;1.5&nbsp;Example&nbsp;#5&lt;/h1&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a29"></a>echo&nbsp;<span class="src-str">&quot;&lt;h2&gt;isAuthorized()&lt;/h2&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a30"></a>echo&nbsp;<span class="src-str">&quot;&lt;hr/&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$auth</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">&quot;&lt;p&gt;&lt;strong&gt;isAuthorized(\&quot;\&quot;,&nbsp;array(),&nbsp;\&quot;QueryFilterAuthzEngine\&quot;)&lt;/strong&gt;:&nbsp;&lt;div&nbsp;style=\&quot;background:&nbsp;#ccffcc;&nbsp;padding:&nbsp;5px\&quot;&gt;&lt;tt&gt;AUTHZ_SUCCESS&lt;/tt&gt;&lt;/div&gt;&lt;/p&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">&quot;&lt;p&gt;&lt;strong&gt;isAuthorized(\&quot;\&quot;,&nbsp;array(),&nbsp;\&quot;QueryFilterAuthzEngine\&quot;)&lt;/strong&gt;:&nbsp;&lt;div&nbsp;style=\&quot;background:&nbsp;#ffcccc;&nbsp;padding:&nbsp;5px\&quot;&gt;&lt;tt&gt;AUTHZ_FAILED&lt;/tt&gt;&lt;/div&gt;&lt;/p&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a38"></a>echo&nbsp;<span class="src-str">&quot;&lt;h3&gt;Authorized&nbsp;patterns&lt;/h3&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a40"></a>echo&nbsp;<span class="src-str">&quot;&lt;ul&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a><span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$apatterns&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$pattern</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">&quot;&lt;li&gt;&lt;a&nbsp;href=\&quot;papi1.5-query-authz.php?&quot;</span>.<span class="src-var">$pattern</span>.<span class="src-str">&quot;\&quot;&gt;&quot;</span>.<span class="src-var">$pattern</span>.<span class="src-str">&quot;&lt;/a&gt;&lt;/li&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a44"></a>echo&nbsp;<span class="src-str">&quot;&lt;/ul&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a46"></a>echo&nbsp;<span class="src-str">&quot;&lt;h3&gt;Denied&nbsp;patterns&lt;/h3&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a48"></a>echo&nbsp;<span class="src-str">&quot;&lt;ul&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$dpatterns&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$pattern</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">&quot;&lt;li&gt;&lt;a&nbsp;href=\&quot;papi1.5-query-authz.php?&quot;</span>.<span class="src-var">$pattern</span>.<span class="src-str">&quot;\&quot;&gt;&quot;</span>.<span class="src-var">$pattern</span>.<span class="src-str">&quot;&lt;/a&gt;&lt;/li&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a51"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a52"></a>echo&nbsp;<span class="src-str">&quot;&lt;li&gt;&lt;a&nbsp;href=\&quot;papi1.5-query-authz.php\&quot;&gt;DEFAULT&lt;/a&gt;&lt;/li&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a>echo&nbsp;<span class="src-str">&quot;&lt;/ul&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a><span class="src-php">?&gt;</span></div></li>
+</ol>
+</div>
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Fri, 11 Feb 2011 10:58:00 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

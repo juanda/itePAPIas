@@ -1,0 +1,18 @@
+phpPoA 2.0
+
+Contents of the distribution:
+
+README                This file
+GPL                   Text of the GNU General Public License, applicable to all the software
+LICENSE               Copyright information and short text of the license, including responsibility disclaimer
+doc                   Documentation for this distribution
+lib                   Auxiliary classes that implement most of the functionality that is shipped with this distribution
+messages              Support files for message internationalization
+samples               Sample usage files, including configuration
+
+PoA.php               The main class of phpPoA2. Include only this file in your applications
+PoAConfigurator.php   The main configuration class
+PoAException.php      Generic phpPoA exception implementation
+PoALog.php            Logging class
+definitions.php       Useful constants
+utils.php             Utility functions

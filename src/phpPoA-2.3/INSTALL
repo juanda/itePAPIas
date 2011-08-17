@@ -1,0 +1,18 @@
+REQUISITES:
+
+ * PHP >= 5.2.0
+ * PHP-MCRYPT
+ * PHP-DBA (if using DBA backends)
+ * PHP-MYSQL (if using MySQL backends)
+ * SimpleSAMLphp (if using SAML for authentication)
+
+INSTALLATION:
+
+ 1. Upgrade/install your PHP to meet the requirements.
+ 2. Copy the package with all files right into your server.
+ 3. Ensure the file PoA.php is in your include path.
+ 4. Put the PoA.conf file in your include path, or set the PHP environment variable "poa_conf_file" to point to your PoA.conf file.
+ 5. Configure the PoA.conf file for your PoAs, and any other configuration files you may need. Refer to the samples for more info
+    on how to configure each engine.
+ 6. If you are using PHP 5.2.X, then ensure the environment option "zend.ze1_compatibility_mode" is off.
+zend.ze1_compatibility_mode
