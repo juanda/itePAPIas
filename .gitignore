@@ -1,3 +1,4 @@
 nbproject
 src/phpPoA-2.3/log/poa.log
 src/phpPoA-2.3/log/requests.db4
+src/phpPoA-2.3/log/requests.db4.lck
