@@ -2,6 +2,7 @@
 
 use TeyDe\Papi\Core;
 use TeyDe\Papi\Connectors;
+use Symfony\Component\HttpFoundation\Response;
 
 require_once __DIR__ . '/../silex.phar';
 require_once __DIR__ . '/../config.php';
@@ -86,7 +87,7 @@ $app->post('/signin', function () use ($config, $app)
             if (count($app['validator.errors']) == 0) // The form is valid
             {
                 $connector = Connectors\Core\ConnectorFactory::createInstance($signinData,
-                        $app['connector.name'], $config['connector']['config']);
+                                $app['connector.name'], $config['connector']['config']);
                 $auth = $connector->isAuthenticated();
                 if ($auth)
                 {
@@ -111,6 +112,32 @@ $app->post('/signin', function () use ($config, $app)
             } else
             {
                 include( $app['form.template'] );
+            }
+        });
+
+$app->get('/test', function () use ($config, $app)
+        {
+            require_once(__DIR__ . '/../src/phpPoA-2.3/PoA.php');
+
+            $poa = new PoA("test");
+            // comprobamos que estamos autentificados, si no es así se produce una
+            // redirección al IdP para solicitar el login y password al hippy.
+            $auth = $poa->authenticate();
+            $papi_attributes = array();
+
+            if ($auth)
+            {
+                // recuperamos los atributos devueltos por el IdP
+                $papi_attributes = $poa->getAttributes();
+
+                echo '<h2> Prueba OK, estos son los atributos devueltos:</h2><br/>';
+                echo '<pre>';
+                print_r($papi_attributes);
+                echo '</pre>';
+                exit;
+            } else
+            {
+                throw new Exception('La prueba no ha tenido éxito');
             }
         });
 
