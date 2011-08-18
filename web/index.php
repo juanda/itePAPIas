@@ -4,8 +4,8 @@ use TeyDe\Papi\Core;
 use TeyDe\Papi\Connectors;
 use Symfony\Component\HttpFoundation\Response;
 
-require_once __DIR__ . '/../silex.phar';
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../src/Silex/silex.phar';
+require_once __DIR__ . '/../config/config.php';
 
 $app = new Silex\Application();
 //

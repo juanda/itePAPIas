@@ -1,5 +1,4 @@
 <?php
-
 $config = array(
     'id' => 'example-AS',
     'pkey_file' => __DIR__ . '/pkey.pem',
