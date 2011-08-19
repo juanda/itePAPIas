@@ -70,7 +70,7 @@ class PAPIAS
         $this->config = $config;
         if (!$session instanceof Session)
         {
-            throw new Exception('the argument of the constructor is not a Symfony2 "session" object ');
+            throw new \Exception('the argument of the constructor is not a Symfony2 "session" object ');
         }
 
         
@@ -145,7 +145,7 @@ class PAPIAS
         // check that uid attribute is present
         if (!isset($this->attributes['uid']))
         {
-            throw new Exception('user identifier parameter "uid" is missing');
+            throw new \Exception('user identifier parameter "uid" is missing');
         }
 
         $assertion = '';
@@ -245,7 +245,7 @@ class PAPIAS
             $className = $filter['class_name'];
             if(!class_exists($className))
             {
-                throw new Exception('The filter  "'.$className. '" does not exists');
+                throw new \Exception('The filter  "'.$className. '" does not exists');
             }
 
             $configuration = $filter['configuration'];

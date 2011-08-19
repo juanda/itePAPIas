@@ -1,28 +1,43 @@
 <?php
+
 $config = array(
     'id' => 'example-AS',
     'pkey_file' => __DIR__ . '/pkey.pem',
     'log_file' => '/tmp/as_log',
     'ttl' => 3600,
     'message_no_auth' => 'Incorrect user and/or password',
-    /*'connector' => array(
-        'name' => 'Simple',
-        'config' => array(),
-    ),*/
+    'debug' => 'true',
+    /* 'connector' => array(
+      'name' => 'Simple',
+      'config' => array(),
+      ), */
     /*
       'connector' => array(
       'name' => 'SimpleWithForm',
       'config' => array(),
-      ),*/
-     
-    /* 'connector' => array(
-      'name'  => 'Symfonite',
-      'config'=> array(
-        'dsn'    => 'mysql:dbname=edae3;host=localhost',
-        'dbuser' => 'root',
-        'dbpass' => 'root',
-      ),
       ), */
+
+    /*
+    'connector' => array(
+        'name' => 'Symfonite',
+        'config' => array(
+            'dsn' => 'mysql:dbname=edae3;host=localhost',
+            'dbuser' => 'root',
+            'dbpass' => 'root',
+        ),
+    ),
+    */
+    'connector' => array(
+        'name' => 'SQL',
+        'config' => array(
+            'dsn' => 'mysql:dbname=users;host=localhost',
+            'dbuser' => 'root',
+            'dbpass' => 'root',
+            'sql'    => 'SELECT username as uid, name, email FROM users WHERE username = :username AND password = :password',
+            // Important: It must be an attributed named uid which identifies the user
+        ),
+    ),
+   /*
     'connector' => array(
         'name' => 'LDAP',
         'config' => array(
@@ -73,6 +88,8 @@ $config = array(
             'priv.password' => NULL,
         )
     ),
+    
+    */
     'filters' => array(
     ),
     'url_test' => 'http://localhost/itePAPIas/web/index.php/signin',

@@ -11,7 +11,7 @@ $app = new Silex\Application();
 //
 // Debug Mode
 //
-$app['debug'] = true;
+$app['debug'] = $config['debug'];
 //
 // Register Extensions
 //

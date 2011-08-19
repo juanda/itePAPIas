@@ -231,7 +231,7 @@ class Connector
             $sth = $this->pdo_conn->prepare($query);
         } catch (\PDOException $e)
         {
-            throw new Exception('Symfonite connector: Failed to prepare query: ' . $e->getMessage());
+            throw new \Exception('Symfonite connector: Failed to prepare query: ' . $e->getMessage());
         }
 
         try
@@ -239,7 +239,7 @@ class Connector
             $res = $sth->execute($fields);
         } catch (\PDOException $e)
         {
-            throw new Exception('edae3auth connector: Failed to execute query: ' . $e->getMessage());
+            throw new \Exception('edae3auth connector: Failed to execute query: ' . $e->getMessage());
         }
 
         $data = $sth->fetchAll(\PDO::FETCH_ASSOC);
