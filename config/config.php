@@ -7,10 +7,11 @@ $config = array(
     'ttl' => 3600,
     'message_no_auth' => 'Incorrect user and/or password',
     'debug' => 'true',
-    /* 'connector' => array(
+    'connector' => array(
       'name' => 'Simple',
       'config' => array(),
-      ), */
+      ), 
+
     /*
       'connector' => array(
       'name' => 'SimpleWithForm',
@@ -27,6 +28,7 @@ $config = array(
         ),
     ),
     */
+    /*
     'connector' => array(
         'name' => 'SQL',
         'config' => array(
@@ -37,6 +39,8 @@ $config = array(
             // Important: It must be an attributed named uid which identifies the user
         ),
     ),
+     
+     */
    /*
     'connector' => array(
         'name' => 'LDAP',

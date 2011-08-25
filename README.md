@@ -160,4 +160,6 @@ insight into the connector development.
 * the getLDAPException method of TeyDe\Papi\Connectors\LDAP\LDAP class is not
 implemented (neither in the original simpleSAMLphp class)
 
+* The test action
+
 [1] This connector is included as example with the software
