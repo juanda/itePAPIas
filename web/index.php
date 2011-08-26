@@ -120,24 +120,25 @@ $app->get('/test', function () use ($config, $app)
             require_once(__DIR__ . '/../src/phpPoA-2.3/PoA.php');
 
             $poa = new PoA("test");
-            // comprobamos que estamos autentificados, si no es así se produce una
-            // redirección al IdP para solicitar el login y password al hippy.
+            // are the user authenticated?. If the user is not authenticated,
+            // in order to request the user credentials, a redirection to the
+            // IdP is performed.
             $auth = $poa->authenticate();
             $papi_attributes = array();
 
             if ($auth)
             {
-                // recuperamos los atributos devueltos por el IdP
+                // Retrieve the IdP attributes
                 $papi_attributes = $poa->getAttributes();
 
-                echo '<h2> Prueba OK, estos son los atributos devueltos:</h2><br/>';
+                echo '<h2> Test OK, These are the returned attributes:</h2><br/>';
                 echo '<pre>';
                 print_r($papi_attributes);
                 echo '</pre>';
                 exit;
             } else
             {
-                throw new Exception('La prueba no ha tenido éxito');
+                throw new Exception('Test unsuccesful');
             }
         });
 

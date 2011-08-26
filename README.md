@@ -8,22 +8,35 @@ This software provides an easy-to-deploy PAPI authentication server.
 * Get the code. The easier and quicker way to do that is by downloading from:
 <http://ntic.educacion.es/desarrollo/itePAPIas/itePAPIas.Beta-1.tgz>.
 
-But if you can prefer a versioned copy, you can use a git client:
+But if you can prefer a versioned and up to date copy, you should use a git client:
 
 	git clone git@github.com:juandalibaba/itePAPIas.git
+        cd itePAPIas
         git submodule init
-        git submodule upload
+        git submodule update
 
-
-* Configure the AS by editing the config.php  file. 
+* Configure the AS by editing the config.php file (see the next section).
 
 * That's all, now you can access the AS through the following URL:
 	
 	http(s)://yourdomain/path_to_the_web_directory/index.php/signin
 
+In order to test the Authentication Server (AS) you need a web application
+(service provider) which perform a identification request on the AS. If you
+haven't yet such service provider, you can perform the test through the
+following URL:
+
+        http(s)://yourdomain/path_to_the_web_directory/index.php/test
+
+You can try with the username "anselmo" and password "pruebas".
+
+Important! You must make writable to the web server the 'src/phpPoA-2.3/log'
+directory in order to run succesfully the test.
+
 ## Configuration
 
-The configuration is made by using a single PHP hierarchical associative array.
+The configuration is made by using a single PHP hierarchical associative array
+located in config/config.php file.
 
 	<?php
 
@@ -33,6 +46,7 @@ The configuration is made by using a single PHP hierarchical associative array.
             'log_file' => '/tmp/as_log',
             'ttl' => 3600,
             'message_no_auth' => 'Incorrect user and/or password',
+            'debug' => 'true',
             'connector' => array(
                 'name'  => 'Symfonite',
                 'config'=> array(
@@ -49,8 +63,8 @@ The configuration is made by using a single PHP hierarchical associative array.
 
 * `$config['id']`: The identification name of the AS
 
-* `$config['pkey_file']` : The path to the file with the private key 
-which identify this AS.
+* `$config['pkey_file']` : The path to the file with the private key used to sign
+the assertions builded by this AS.
 
 * `$config['log_file']` : The path to the log file
 
@@ -58,12 +72,14 @@ which identify this AS.
 
 * `$config['message_no_auth']` : Message to show when the authentication
 process is not correct.
-
+* `$config['debug']` : User to activate/deactivate the debug functionality. When
+it is active all the catched exception are show with verbosity in order to help
+the debugging process. Else, just an error 500 is shown.
 * `$config['connector']` : associative array with the connectors configuration
 data. It must include two elements:
    $config['connector']['name'] witch is the connector name, and
    $config['connector']['config'] is an associative array with the connector
-configuration data.
+configuration data. Each connector defines its configuration array.
 
 
 ### Notes
@@ -75,23 +91,60 @@ of your web server.
 
 ### Available connectors
 
+You can find in a commented section of the config file a configuration example
+for every connector.
+
+#### LDAP Connector
+
+This connector retrieves the user attributes from a LDAP service.
+
+#### Simple Connector
+
+This is an very simple connector which takes the user attributes directly from
+an array. It is intended to show the connector structure and to help to develop
+your own connectors.
+
+#### SimpleWithForm Connector
+
+As the Simple Connector, this one takes the user attributes directly from
+an array, but it also needs an identification number (DNI), besides the usual
+username and password credentials, to perform the authentication. This connector
+is intended to show how to develop connectors which use credentials beyond the
+usual username and password. Here you can see how to include a form with the
+data you need to perform the authentication process.
+
+#### SQL Connector
+
+A connector to retrieve the user attribute from an PDO compatible database by
+means of a simple SQL query.
+
+#### Symfonite Connector
+
+A connector to retrive the user attribute from a symfonite[1] system
+
+
 ### How to add and implement new Connectors
 
 The connector is a service used by the PAPI AS framework in order to retrieve the
 user's attributes from the information system where his data are stored (a
 database, a LDAP directory service, a file, etc). The connector must be imple-
-mented as a class with several required public method. We are going to describe
-how to develop a connector to access your information service.
+mented as a class with several required public method (an interface). We are
+going to describe how to develop a connector to access your information service.
 
-All the connectors reside in the src/Papi/Connectors directory. So create a
-directory named {connector_name} under such ubication. For example, to create a
-connector named "Simple"[1], we create the directory 'src/Papi/Connectors/Simple'.
+All the connectors reside in the src/TeyDe/Papi/Connectors directory. You must
+create a directory named {connector_name} under such ubication. For example, to
+create a connector named "Simple"[2], we create the directory:
 
-Now, under such directory, you must create in a file named 'Connector.php' a class
-named 'Connector' belonging to the namespace TeyDe\Papi\Connectors\{connector_name}.
-This class will provide the interface needed to access the information system
-where the attributes are stored and to return these attributes to the AS. The
-interface is composed by three public methods:
+        'src/Papi/Connectors/Simple'.
+
+A class named 'Connector' belonging to the namespace
+
+        TeyDe\Papi\Connectors\{connector_name}.
+
+will provide the interface needed to access the information system where the
+attributes are stored and will return these attributes to the AS. This class must
+reside into a file named 'Connector.php'. The interface is composed by three
+public methods:
 
         public function __construct($data, $config=null){}
 
@@ -101,7 +154,7 @@ interface is composed by three public methods:
 
 The '__construct($data, $config=null)' method is going to initialize the object
 with the data collected by the login form. If you are going to use the default
-form, then the $data argument is an associative two element array wich keys are
+form, then the $data argument is a two element associative array wich keys are
 'username' and 'password', and which values are what you can imagine. If needed,
 the login form and the data collected by him can be redefined. How to do this will
 be later explained.
@@ -142,7 +195,8 @@ For example:
 
 
 And that's all folks!. Now you can use the your new connector by setting the
-rigth params in the '$config['connector']' array.
+rigth params in the configuration file by setting the '$config['connector']'
+array.
 
 You should take a look at the existing connectors in order to get a better
 insight into the connector development.
@@ -160,6 +214,6 @@ insight into the connector development.
 * the getLDAPException method of TeyDe\Papi\Connectors\LDAP\LDAP class is not
 implemented (neither in the original simpleSAMLphp class)
 
-* The test action
 
-[1] This connector is included as example with the software
+[1] http://ntic.educacion.es/desarrollo/symfonite
+[2] This connector is included as example with the software
