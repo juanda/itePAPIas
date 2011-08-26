@@ -224,6 +224,7 @@ class PAPIAS
         }
 
         return $redirectTo;
+
     }
 
     /**
@@ -242,13 +243,14 @@ class PAPIAS
 
         foreach($filters as $filter)
         {            
-            $className = $filter['class_name'];
+            $className = '\\TeyDe\\Papi\\Filters\\'.$filter['class_name'];
+
             if(!class_exists($className))
             {
                 throw new \Exception('The filter  "'.$className. '" does not exists');
             }
 
-            $configuration = $filter['configuration'];
+            $configuration = $filter['config'];
             $this -> attributes = call_user_func(array($className ,'execute'), 
                     $this -> attributes, $configuration);
         }        

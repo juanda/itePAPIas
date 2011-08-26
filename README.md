@@ -10,7 +10,7 @@ This software provides an easy-to-deploy PAPI authentication server.
 
 But if you can prefer a versioned and up to date copy, you should use a git client:
 
-	git clone git@github.com:juandalibaba/itePAPIas.git
+        git clone git@github.com:juandalibaba/itePAPIas.git
         cd itePAPIas
         git submodule init
         git submodule update
@@ -19,7 +19,7 @@ But if you can prefer a versioned and up to date copy, you should use a git clie
 
 * That's all, now you can access the AS through the following URL:
 	
-	http(s)://yourdomain/path_to_the_web_directory/index.php/signin
+        http(s)://yourdomain/path_to_the_web_directory/index.php/signin
 
 In order to test the Authentication Server (AS) you need a web application
 (service provider) which perform a identification request on the AS. If you
@@ -57,6 +57,8 @@ located in config/config.php file.
             ),
             'filters' => array(
             ),
+
+            'url_test' => 'http://localhost/itePAPIas/web/index.php/signin',
 );
 
 ### Meaning of the configuration parameters
@@ -72,14 +74,21 @@ the assertions builded by this AS.
 
 * `$config['message_no_auth']` : Message to show when the authentication
 process is not correct.
+
 * `$config['debug']` : User to activate/deactivate the debug functionality. When
 it is active all the catched exception are show with verbosity in order to help
 the debugging process. Else, just an error 500 is shown.
+
 * `$config['connector']` : associative array with the connectors configuration
 data. It must include two elements:
    $config['connector']['name'] witch is the connector name, and
    $config['connector']['config'] is an associative array with the connector
 configuration data. Each connector defines its configuration array.
+
+* `$config['filters']` : associative arrar with the chain of filter to be applied
+on the attributes returned by the connector.
+
+* `$config['url_test']` : The test action url.
 
 
 ### Notes
@@ -206,6 +215,48 @@ insight into the connector development.
 ### Available filters
 
 ### How to add and implement new Filters
+
+Once the user attributes have been retrieved thanks to the connector, the PAPI
+framework can filter them before the PAPI assertion is built and sent.
+
+#### How to use the filters
+
+You can use the available filters which reside in the
+
+         src/TeyDe/Papi/Filters
+
+directory.
+
+In order to use these filters you must add them to the filters section of the
+$config array in the config/congig.php file:
+
+ 'filters' => array(
+        '0' => array(
+            'class_name' => 'AttributePrune',
+            'config' => array(
+                'attributes_to_prune' => array('att1', 'ePa'),
+            ),
+        ),
+
+        '1' => array(
+            'class_name' => 'AttributeReverse',
+            'config' => array(),
+        ),
+    ),
+
+You can add as many filters as you want to the sequence. The documentation
+of each filter must explain the correct values of its parameters.
+
+#### How to create new filters
+
+Create a new filter is as easy as create a new class wich defines a public
+static method called 'execute($attributes, $configuration)'. Such method must
+get as the first argument the attributes array and as the second an array with
+the configuration defined in the $config array. The method must return an array
+with the filtered attributes.
+
+Take a look at the classes defined in the 'lib/filters' directory to see how
+simple is a filter implementation.
 
 ### TO-DO
 
