@@ -129,7 +129,7 @@ means of a simple SQL query.
 
 #### Symfonite Connector
 
-A connector to retrive the user attribute from a symfonite[1] system
+A connector to retrive the user attribute from a [symfonite][1] system
 
 
 ### How to add and implement new Connectors
