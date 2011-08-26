@@ -266,5 +266,5 @@ simple is a filter implementation.
 implemented (neither in the original simpleSAMLphp class)
 
 
-[1] http://ntic.educacion.es/desarrollo/symfonite
-[2] This connector is included as example with the software
+[1]: http://ntic.educacion.es/desarrollo/symfonite
+[2]: This connector is included as example with the software
