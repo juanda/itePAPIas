@@ -23,7 +23,7 @@ $config = array(
     'log_file' => '/tmp/as_log',
     'ttl' => 3600,
     'message_no_auth' => 'Incorrect user and/or password',
-    'debug' => 'true',
+    'debug' => true,
     'connector' => array(
         'name' => 'Simple',
         'config' => array(),
@@ -125,6 +125,6 @@ $config = array(
     ),
      */
 
-    'url_test' => 'http://localhost/itePAPIas/web/index.php/signin',
+    'url_test' => 'http://localhost/itePAPIas/web/index.php',
 );
 

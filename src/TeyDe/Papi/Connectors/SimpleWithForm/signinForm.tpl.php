@@ -19,8 +19,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" type="text/css" media="screen" href="../css/core/default.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="../css/core/contenido.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $app['dir.root'] . '/css/core/default.css' ?>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $app['dir.root'] . '/css/core/contenido.css'?>" />
 
         <title>PAPI Authentication Server</title>
         <link rel="shortcut icon" href="/favicon.ico" />
