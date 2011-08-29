@@ -19,6 +19,6 @@ THIRD PARTIES LICENCES
 The current software uses the following third parties sofware as 
 libraries:
 
-silex (http://silex-project.org)                      -------> MIT License
-Symfony/Component/Validator (http://symfony.com)      -------> MIT License
-phpPoA-2.3 (https://forja.rediris.es/projects/phppoa) -------> GNU License
+* silex (http://silex-project.org), MIT License
+* Symfony/Component/Validator (http://symfony.com), MIT License
+* phpPoA-2.3 (https://forja.rediris.es/projects/phppoa), GNU License
