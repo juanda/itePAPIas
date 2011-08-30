@@ -24,7 +24,7 @@ class PAPIASLog
     public static function error($msg, $log="/dev/null", $asId="example_as")
     {
         PAPIASLog::doLog($msg, $log, $asId);
-        echo $msg;
+        //echo $msg;
         throw new \RuntimeException($msg);
     }
 

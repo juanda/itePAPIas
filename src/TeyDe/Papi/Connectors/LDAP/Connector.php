@@ -17,24 +17,6 @@
 ?>
 <?php
 
-/**
- * You can define configuration parameter in the config/app.yml file of the plugin.
- * It's recommended to add them at the 'eda_papi_plugin_connectors' of the file.
- *
- * You can access these parameter by means of the sfConfig::get() function, like
- * this:
- *
- * $param = sfConfig::get('eda_papi_plugin_connectors_array_prueba', 'valor por defecto');
- *
- * More information about this in the symfony documentation:
- * http://www.symfony-project.org/gentle-introduction/1_4/en/05-Configuring-Symfony
- *
- * Also, if you need the PAPI Request Parameters you can access them like this:
- *
- * $papiParams = sfContext::getInstance() -> getUser()->getAttributeHolder()
- * ->getNames('PAPIREQUEST')
- */
-
 namespace TeyDe\Papi\Connectors\LDAP;
 
 use TeyDe\Papi\Core\PAPIASLog;
@@ -172,9 +154,7 @@ class Connector
      *
      * Will throw a SimpleSAML_Error_Error('WRONGUSERPASS') if the username or password is wrong.
      * If there is a configuration problem, an Exception will be thrown.
-     *
-     * @param string $username  The username the user wrote.
-     * @param string $password  The password the user wrote.
+     * 
      * @param arrray $sasl_args  Array of SASL options for LDAP bind.
      * @return array  Associative array with the users attributes.
      */

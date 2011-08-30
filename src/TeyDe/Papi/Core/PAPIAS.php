@@ -1,4 +1,5 @@
 <?php
+
 /*
   This file is part of itePAPIas.
   Foobar is free software: you can redistribute it and/or modify
@@ -20,14 +21,13 @@
 namespace TeyDe\Papi\Core;
 
 use Symfony\Component\HttpFoundation\Session;
+
 /**
  * This class implements the needed services to build the PAPI assertion from
  * the PAPI request string and the attributes collected by the connector.
  *
  * It also implements a chain of filter to be applied before the assertion is
  * going to be builded. The chain of filters can be set throuht the config file
- * app.yml. // TODO The way to set an implement the chain of filter isn't
- * implemented yet.
  */
 class PAPIAS
 {
@@ -40,9 +40,7 @@ class PAPIAS
     protected $config = array();
 
     /**
-     * This constructor parses the PAPI request string (which has been previously
-     * copied into the session, that is added as attributes of symfony session class)
-     * and build the parameters:
+     * This constructor parses the PAPI request string  and build the parameters:
      * -> $theURL
      * -> theRef
      *
@@ -53,38 +51,31 @@ class PAPIAS
      * an PAPIAS class as follow:
      *
      * $papiasobject -> setAttributes($a) -> applyFilters() -> ...
-     *
-     *
-     * @param session $session
+     * 
      */
-    public function __construct($session, $config)
+    public function __construct($papi_request, $config)
     {
         $this->config = $config;
-        if (!$session instanceof Session)
-        {
-            throw new \Exception('the argument of the constructor is not a Symfony2 "session" object ');
-        }
 
-        
-        $this->papiRequest = $session ->get('PAPIREQUEST');
+        $this->papiRequest = $papi_request;
 
         if (!isset($this->papiRequest['ACTION']) && !isset($this->papiRequest['ATTREQ']))
-        {           
+        {
             PAPIASLog::error("Unknown request (1). Use the PAPI 1.0 protocol",
-                    $config['log_file'], $config['id']);
+                            $config['log_file'], $config['id']);
         }
         if (isset($this->papiRequest['ACTION']) &&
                 ($this->papiRequest['ACTION'] != "CHECK" ||
                 !isset($this->papiRequest['DATA']) || !isset($this->papiRequest['URL'])))
         {
             PAPIASLog::error("Unknown request (2). Use the PAPI 1.0 protocol",
-                    $config['log_file'], $config['id']);
+                            $config['log_file'], $config['id']);
         }
         if (isset($this->papiRequest['ATTREQ']) && (!isset($this->papiRequest['PAPIPOAREF'])
                 || !isset($this->papiRequest['PAPIPOAURL'])))
         {
             PAPIASLog::error("Unknown request (3). Use the PAPI 1.0 protocol",
-                    $config['log_file'], $config['id']);
+                            $config['log_file'], $config['id']);
         }
         if (isset($this->papiRequest['ACTION']))
         {
@@ -137,7 +128,10 @@ class PAPIAS
         // check that uid attribute is present
         if (!isset($this->attributes['uid']))
         {
-            throw new \Exception('user identifier parameter "uid" is missing');
+            $message = 'user identifier parameter "uid" is missing';
+            PAPIASLog::error($message,
+                            $this->config['log_file'], $this->config['id']);
+            throw new \Exception($message);
         }
 
         $assertion = '';
@@ -168,11 +162,7 @@ class PAPIAS
         $assertion .= ( 0 == $k) ? '' : ',';
         $assertion .= $this->attributes['uid'] . '@' . $this->config['id'];
         $this->assertion = $assertion;
-//        echo '<pre>';
-//        print_r($this->attributes);
-//        echo $assertion;
-//        echo '</pre>';//
-//        exit;
+     
         return $this;
     }
 
@@ -184,14 +174,14 @@ class PAPIAS
      */
     public function buildRedirection()
     {
-        $fp = fopen($this->config['pkey_file'], 'r');
+        $fp = fopen($this->config['prvkey_file'], 'r');
         if (!$fp)
         {
             throw new \Exception('private key file is missing');
         }
 
         $asId = $this->config['id'];
-        $pKey = fread($fp, filesize($this->config['pkey_file']));
+        $pKey = fread($fp, filesize($this->config['prvkey_file']));
         $now = time();
         $ttl = $this->config['ttl'];
         $ext = $now + $ttl;
@@ -216,7 +206,6 @@ class PAPIAS
         }
 
         return $redirectTo;
-
     }
 
     /**
@@ -225,27 +214,30 @@ class PAPIAS
      * @return PAPIAS
      */
     public function applyFilters()
-    {       
-        $filters = $this->config['filters'];        
-                                
-        if (!isset($filters) || !(is_array($filters) && count($filters) > 0))
+    {
+
+        if (!isset($this->config['filters']) ||
+                !(is_array($this->config['filters']) &&
+                count($this->config['filters']) > 0))
         {
             return $this;
         }
 
-        foreach($filters as $filter)
-        {            
-            $className = '\\TeyDe\\Papi\\Filters\\'.$filter['class_name'];
+        $filters = $this->config['filters'];
 
-            if(!class_exists($className))
+        foreach ($filters as $filter)
+        {
+            $className = '\\TeyDe\\Papi\\Filters\\' . $filter['class_name'];
+
+            if (!class_exists($className))
             {
-                throw new \Exception('The filter  "'.$className. '" does not exists');
+                throw new \Exception('The filter  "' . $className . '" does not exists');
             }
 
             $configuration = $filter['config'];
-            $this -> attributes = call_user_func(array($className ,'execute'), 
-                    $this -> attributes, $configuration);
-        }        
+            $this->attributes = call_user_func(array($className, 'execute'),
+                            $this->attributes, $configuration);
+        }
         return $this;
     }
 

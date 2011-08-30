@@ -1,4 +1,5 @@
 <?php
+
 /*
   This file is part of itePAPIas.
   Foobar is free software: you can redistribute it and/or modify
@@ -19,31 +20,34 @@
 
 $config = array(
     'id' => 'example-AS',
-    'pkey_file' => __DIR__ . '/pkey.pem',
+    'prvkey_file' => __DIR__ . '/pkey.pem',
+    'pubkey_file' => __DIR__ . '/pubkey.pem', //only needed for test action
     'log_file' => '/tmp/as_log',
     'ttl' => 3600,
     'message_no_auth' => 'Incorrect user and/or password',
     'debug' => true,
-    'connector' => array(
-        'name' => 'Simple',
-        'config' => array(),
-    ),
+    
+      'connector' => array(
+      'name' => 'Simple',
+      'config' => array(),
+      ),
+    
     /*
       'connector' => array(
       'name' => 'SimpleWithForm',
       'config' => array(),
       ), */
 
-    /*
-      'connector' => array(
-      'name' => 'Symfonite',
-      'config' => array(
-      'dsn' => 'mysql:dbname=edae3;host=localhost',
-      'dbuser' => 'root',
-      'dbpass' => 'root',
-      ),
-      ),
-     */
+   /*
+    'connector' => array(
+        'name' => 'Symfonite',
+        'config' => array(
+            'dsn' => 'mysql:dbname=edae3;host=localhost',
+            'dbuser' => 'root',
+            'dbpass' => 'root',
+        ),
+    ),
+    */
     /*
       'connector' => array(
       'name' => 'SQL',
@@ -51,11 +55,10 @@ $config = array(
       'dsn' => 'mysql:dbname=users;host=localhost',
       'dbuser' => 'root',
       'dbpass' => 'root',
-      'sql'    => 'SELECT username as uid, name, email FROM users WHERE username = :username AND password = :password',
+      'sql' => 'SELECT username as uid, name, email FROM users WHERE username = :username AND password = :password',
       // Important: It must be an attributed named uid which identifies the user
       ),
       ),
-
      */
     /*
       'connector' => array(
@@ -108,21 +111,21 @@ $config = array(
       'priv.password' => NULL,
       )
       ),
-
      */
+
     /*
-    'filters' => array(
-        '0' => array(
-            'class_name' => 'AttributePrune',
-            'config' => array(
-                'attributes_to_prune' => array('att1', 'ePa'),
-            ),
-        ),
-        '1' => array(
-            'class_name' => 'AttributeReverse',
-            'config' => array(),
-        ),
-    ),
+      'filters' => array(
+      '0' => array(
+      'class_name' => 'AttributePrune',
+      'config' => array(
+      'attributes_to_prune' => array('att1', 'ePa'),
+      ),
+      ),
+      '1' => array(
+      'class_name' => 'AttributeReverse',
+      'config' => array(),
+      ),
+      ),
      */
 
     'url_test' => 'http://localhost/itePAPIas/web/index.php',

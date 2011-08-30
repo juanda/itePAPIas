@@ -32,13 +32,12 @@ $app = new Silex\Application();
 $app['debug'] = $config['debug'];
 
 //
-// Register Extensions
+// Register Extensions and autoload
 //
 $app->register(new Silex\Extension\SessionExtension());
 $app->register(new Silex\Extension\ValidatorExtension(), array(
     'validator.class_path' => __DIR__ . '/../src',
 ));
-$app->register(new Silex\Extension\UrlGeneratorExtension());
 
 $app['autoloader']->registerNamespaces(array(
     'TeyDe' => __DIR__ . '/../src',
@@ -50,35 +49,53 @@ $app['autoloader']->register();
 //
 $app['connector.name'] = $config['connector']['name'];
 
-$app->before(function ($request) use ($app)
-        {
-            if (!$app['connector.name'])
-            {
-                throw new Exception('No connector has been defined. You must set the
-        "connector" parameter in the configuration file');
-            }            
-        });
-
 //
 // Looking for the signin form
 //
-
 $app['form.template'] = Connectors\Core\SigninFormFactory::createInstance($app['connector.name']);
 
 $app['dir.root'] = dirname($_SERVER['SCRIPT_NAME']);
+
+
+// Pre-action used to validate some config data
+$app->before(function ($request) use ($app, $config)
+        {
+            if (!$app['connector.name'])
+            {
+                throw new \Exception('No connector has been defined. You must set the
+        "connector" parameter in the configuration file');
+            }
+
+            if (!file_exists($config['prvkey_file']))
+            {
+                throw new \Exception('private key file missing');
+            }
+
+            if (!is_writable(dirname($config['log_file'])))
+            {
+                throw new \Exception('log directory '.dirname($config['log_file']) .
+                        ' is not writable');
+            }
+
+            if (!isset($config['id']) || $config['id'] == '')
+            {
+                throw new \Exception('You must set the id of this Authentication
+                     server');
+            }
+
+            if (!isset($config['ttl']) || $config['ttl'] == '')
+            {
+                throw new \Exception('You must set ttl config parameter');
+            }
+        });
+
 //
 // GET Action
 //
 $app->get('/', function () use ($config, $app)
-                {
-//            echo '<pre>';
-//            echo 'GET<br>';
-//            print_r($app['session']);
-//            echo '</pre>';
+                {          
                     /* Take the PAPI GET parameter and put them in the session. It's easier
-                     * an safer to handle such parameter from the session.
-                     *  $this -> getUser() gets an object wich represents the session in
-                     *  symfony
+                     * an safer to handle such parameter from the session.                     
                      */
                     if (!$app['session']->get('PAPIREQUEST'))
                     {
@@ -92,19 +109,13 @@ $app->get('/', function () use ($config, $app)
                         }
                         $app['session']->set('PAPIREQUEST', $sessionParams);
                     }
-
-                    $app['session.request'] = $app['session']->get('PAPIREQUEST');
+                    
                     include($app['form.template'] );
                 })
         ->bind('signin_get');
 
 $app->post('/', function () use ($config, $app)
-                {
-//            echo '<pre>';
-//            echo 'POST<br>';
-//            print_r($app['request']->get('signin'));
-//            echo '</pre>';
-//            exit;
+                {           
                     $signinData = $app['request']->get('signin');
 
                     $signinParameters = Connectors\Core\SigninParametersFactory::createInstance($app['connector.name']);
@@ -124,11 +135,10 @@ $app->post('/', function () use ($config, $app)
                         {
                             $app['session']->setFlash('message',
                                     $config['message_no_auth']);
-
-
-                            return $app->redirect('/');
+                                    
+                            return $app->redirect($app['dir.root'].'/');
                         }
-                        $papias = new Core\PAPIAS($app['session'], $config);
+                        $papias = new Core\PAPIAS($app['session']->get('PAPIREQUEST'), $config);
 
                         $redirectTo = $papias
                                 ->setAttributes($attributes)
@@ -146,6 +156,17 @@ $app->post('/', function () use ($config, $app)
 
 $app->get('/test', function () use ($config, $app)
                 {
+                    if (!is_writable(__DIR__.'/../src/phpPoA-2.3/log'))
+                    {
+                        throw new \Exception('/../src/phpPoA-2.3/log directory
+                            must be writable to perform the test action');
+                    }
+                    if (!file_exists($config['pubkey_file']))
+                    {
+                        throw new \Exception('public key file missing which is
+                            needed to perform test action');
+                    }
+
                     require_once(__DIR__ . '/../src/phpPoA-2.3/PoA.php');
 
                     $poa = new PoA("test");
@@ -159,12 +180,8 @@ $app->get('/test', function () use ($config, $app)
                     {
                         // Retrieve the IdP attributes
                         $papi_attributes = $poa->getAttributes();
-
-                        echo '<h2> Test OK, These are the returned attributes:</h2><br/>';
-                        echo '<pre>';
-                        print_r($papi_attributes);
-                        echo '</pre>';
-                        exit;
+                        include __DIR__.'/test_result.tpl.php';
+                        
                     } else
                     {
                         throw new Exception('Test unsuccesful');

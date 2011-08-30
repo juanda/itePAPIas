@@ -42,7 +42,8 @@ located in config/config.php file.
 
 	$config = array(
             'id' => 'example-AS',
-            'pkey_file' => dirname(__FILE__) . '/pkey.pem',
+            'prvkey_file' => __DIR__ . '/pkey.pem',
+            'pubkey_file' => __DIR__.'/pubkey.pem', 
             'log_file' => '/tmp/as_log',
             'ttl' => 3600,
             'message_no_auth' => 'Incorrect user and/or password',
@@ -65,8 +66,12 @@ located in config/config.php file.
 
 * `$config['id']`: The identification name of the AS
 
-* `$config['pkey_file']` : The path to the file with the private key used to sign
+* `$config['prvkey_file']` : The path to the file with the private key used to sign
 the assertions builded by this AS.
+
+* `$config['pubkey_file']` : The path to the file with the public key used corresponding
+to the private key. This file is only needed to perform the test action. Also it
+can be used as a reference of the corresponding public key.
 
 * `$config['log_file']` : The path to the log file
 
@@ -289,6 +294,7 @@ libraries:
 
 * Improve the configuration system
 * Improve de logger system
+* Add Service Provider filter
 * the getLDAPException method of TeyDe\Papi\Connectors\LDAP\LDAP class is not
 implemented (neither in the original simpleSAMLphp class)
 
