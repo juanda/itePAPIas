@@ -19,7 +19,7 @@ But if you can prefer a versioned and up to date copy, you should use a git clie
 
 * That's all, now you can access the AS through the following URL:
 	
-        http(s)://yourdomain/path_to_the_web_directory/index.php/signin
+        http(s)://yourdomain/path_to_the_web_directory/index.php
 
 In order to test the Authentication Server (AS) you need a web application
 (service provider) which perform a identification request on the AS. If you
