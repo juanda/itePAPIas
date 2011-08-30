@@ -215,6 +215,42 @@ array.
 You should take a look at the existing connectors in order to get a better
 insight into the connector development.
 
+### How to change the identification form used by the connector
+
+The usual way to perform the identification proccess is through an username and
+password pair. So most of the connector can share the same identification form.
+However, this won't be right for every case. If the connector you are going to
+develop needs another set of data, you must redefine the identification form in
+order to ask the required set of data. To do this you must follow these steps:
+
+1. In the connector directory (src/TeyDe/Connectors/{connector_name} you have
+to create a class named SigninParamenters in the 'TeyDe\Papi\Connectors\{connector_name}
+namespace. This class is intended to define the form params and the way they
+must be validated on the server side. To define the form params, the class must
+declare them as accesible attributes (they can be made public or private with the
+corresponding getters and setters). This class must also implement two method:
+
+* public function bind($data), will map to the class attributes the data collected
+by the form and represented by the argument $data, which is an associative array
+like this:
+          array(
+             'field_1' => 'value_1',
+             ...
+             'field_n' => 'value_n',
+          )
+
+
+* public static function loadValidatorMetadata(ClassMetadata $metadata), which
+defines the validation rules applied on the form data (see
+[http://symfony.com/doc/2.0/book/validation.html])
+
+2. In the connector directory (src/TeyDe/Connectors/{connector_name} you have
+to create the form template named 'signinForm.tmp.php' which will be rendered
+to the client.
+
+The best way to undertand all this, is by studying the SimpleWithForm connector
+included with this software.
+
 ## Filters
 
 ### Available filters

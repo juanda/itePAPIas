@@ -64,14 +64,7 @@
                                           
 
 
-                                    <form name="f" action="signin" method="post" >
-                                        <!-- Parámetros PAPI -->
-                                <?php if (isset($app['session.request'])): ?>
-                                <?php foreach ($app['session.request'] as $k => $v): ?>
-                                                <input type="hidden" name="<?php echo $k ?>" value="<?php echo $v ?>" />
-                                <?php endforeach; ?>
-                                <?php endif; ?>
-                                <!-- Fin Parámetros PAPI -->
+                                    <form name="f" action="signin" method="post" >                                        
 
                                 <fieldset>
                                     <div class="sf_admin_form_row">
