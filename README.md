@@ -95,13 +95,13 @@ on the attributes returned by the connector.
 
 * `$config['url_test']` : The test action url.
 
-### How ti generate the public and private keys
+### How to generate the public and private keys
 
-* private key:
+* private key file:
 
           openssl genrsa -out mykey.pem 1024
 
-* public key:
+* public key file:
 
           openssl rsa -in pkey.pem -pubout > pubkey.pem
 
