@@ -242,7 +242,7 @@ like this:
 
 * public static function loadValidatorMetadata(ClassMetadata $metadata), which
 defines the validation rules applied on the form data (see
-[http://symfony.com/doc/2.0/book/validation.html])
+http://symfony.com/doc/2.0/book/validation.html)
 
 2. In the connector directory (src/TeyDe/Connectors/{connector_name} you have
 to create the form template named 'signinForm.tmp.php' which will be rendered
