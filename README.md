@@ -3,6 +3,11 @@ PAPI AUTHENTICATION SERVER
 
 This software provides an easy-to-deploy PAPI authentication server.
 
+PAPI is a system for providing access control to restricted information resources
+across the Internet. It intends to keep authentication as an issue local to the
+organization the user belongs to, while leaving the information providers full
+control over the resources they offer (http://papi.rediris.es/).
+
 ## Installation
 
 * Get the code. The easier and quicker way to do that is by downloading from:
